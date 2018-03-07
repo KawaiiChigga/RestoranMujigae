@@ -1,4 +1,4 @@
-package restoranmujigae.app.database;
+package restoranmujigae.app.menu;
 
 
 import java.sql.PreparedStatement;
@@ -8,9 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import restoranmujigae.app.database.DBConnector;
+import restoranmujigae.app.database.DBConnector;
 import restoranmujigae.app.menu.Menu;
 
-public class Beans {
+public class MenuCtrl {
 	
 	public LinkedList<Menu> getAllMenu() throws SQLException{
 		LinkedList<Menu> list = new LinkedList();
