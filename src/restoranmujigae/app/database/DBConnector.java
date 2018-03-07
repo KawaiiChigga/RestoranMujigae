@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class DBConnector {
     public Connection con;
 	private String driver = "com.mysql.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost/db_tubes_pbo";
+	private String url = "jdbc:mysql://localhost/restoran_mujigae";
 	private String username = "root";
 	private String password = "";
 
