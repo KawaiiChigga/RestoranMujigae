@@ -11,6 +11,13 @@ public class Menu {
     private double harga;
     private boolean status;
 
+    public Menu(int id, String nama, double harga, boolean status) {
+        this.id = id;
+        this.nama = nama;
+        this.harga = harga;
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }
