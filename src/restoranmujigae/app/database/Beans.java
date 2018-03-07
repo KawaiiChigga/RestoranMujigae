@@ -1,3 +1,6 @@
+package restoranmujigae.app.database;
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +10,7 @@ import java.util.LinkedList;
 import restoranmujigae.app.database.DBConnector;
 import restoranmujigae.app.menu.Menu;
 
-public class ItemBean {
+public class Beans {
 	
 	public LinkedList<Menu> getAllMenu() throws SQLException{
 		LinkedList<Menu> list = new LinkedList();

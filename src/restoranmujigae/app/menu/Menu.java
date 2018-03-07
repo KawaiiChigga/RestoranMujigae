@@ -11,6 +11,9 @@ public class Menu {
     private double harga;
     private boolean status;
 
+    public Menu(){
+    }
+    
     public Menu(int id, String nama, double harga, boolean status) {
         this.id = id;
         this.nama = nama;
