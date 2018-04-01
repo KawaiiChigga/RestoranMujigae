@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restoranmujigae.app.order;
+package restoranmujigae.app.model.order;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 
 public class OrderMenu {
     private int id;
     private boolean status;
     private int id_meja;
     private int id_waiter;
-    private Timestamp created_at;
+    private LocalDateTime created_at;
     private boolean is_deleted;
     private Meja meja;
-    private Waiter waiter;
+    private Pelayan waiter;
 
     public int getId() {
         return id;
@@ -49,11 +50,11 @@ public class OrderMenu {
         this.id_waiter = id_waiter;
     }
 
-    public Timestamp getCreated_at() {
+    public LocalDateTime getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Timestamp created_at) {
+    public void setCreated_at(LocalDateTime created_at) {
         this.created_at = created_at;
     }
 
@@ -73,11 +74,11 @@ public class OrderMenu {
         this.meja = meja;
     }
 
-    public Waiter getWaiter() {
+    public Pelayan getWaiter() {
         return waiter;
     }
 
-    public void setWaiter(Waiter waiter) {
+    public void setWaiter(Pelayan waiter) {
         this.waiter = waiter;
     }
     

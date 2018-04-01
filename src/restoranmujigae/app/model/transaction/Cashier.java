@@ -3,23 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restoranmujigae.app.menu;
+package restoranmujigae.app.model.transaction;
 
-public class Menu {
+public class Cashier {
     private int id;
     private String nama;
-    private double harga;
     private boolean status;
-
-    public Menu(){
-    }
-    
-    public Menu(int id, String nama, double harga, boolean status) {
-        this.id = id;
-        this.nama = nama;
-        this.harga = harga;
-        this.status = status;
-    }
 
     public int getId() {
         return id;
@@ -35,14 +24,6 @@ public class Menu {
 
     public void setNama(String nama) {
         this.nama = nama;
-    }
-
-    public double getHarga() {
-        return harga;
-    }
-
-    public void setHarga(double harga) {
-        this.harga = harga;
     }
 
     public boolean isStatus() {
