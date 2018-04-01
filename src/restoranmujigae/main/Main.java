@@ -15,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Dessert.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Menu.fxml"));
         primaryStage.setTitle("MUJIGAE");
         primaryStage.setMaximized(false);
         primaryStage.setFullScreen(true);
