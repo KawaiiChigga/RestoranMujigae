@@ -22,9 +22,9 @@ import javafx.stage.Stage;
  *
  * @author Glenn Hizkia Naftali
  */
-public class MenuController{
+public class MyOrder{
     @FXML
-    private void getBack(ActionEvent event) throws IOException{
+    private void getDesserts(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -53,11 +53,7 @@ public class MenuController{
         System.out.println("Return Drink");
     }
     
-     @FXML
-    private void getDesserts(ActionEvent event){
-        System.out.println("Return Desserts");
-    }
-    
+   
       @FXML
     private void getCallWaiters(ActionEvent event){
         System.out.println("Return Desserts");
