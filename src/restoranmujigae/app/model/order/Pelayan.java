@@ -3,13 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restoranmujigae.app.order;
+package restoranmujigae.app.model.order;
 
-public class Waiter {
+public class Pelayan {
     private int id;
     private String nama;
     private boolean status;
+    private String pin;
 
+    public Pelayan() {
+        
+    }
+    
+    public Pelayan(String nama, String pin) {
+        this.nama = nama;
+        this.pin = pin;
+    }
+
+    public Pelayan(int id, String nama, boolean status, String pin) {
+        this.id = id;
+        this.nama = nama;
+        this.status = status;
+        this.pin = pin;
+    }
+    
     public int getId() {
         return id;
     }
@@ -33,6 +50,15 @@ public class Waiter {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
     
     
 }

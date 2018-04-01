@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restoranmujigae.app.transaction;
+package restoranmujigae.app.model.transaction;
 
 import java.sql.Timestamp;
-import restoranmujigae.app.order.OrderMenu;
+import restoranmujigae.app.model.order.OrderMenu;
 
 public class Transaction {
     private int id;
