@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2018 at 04:44 PM
+-- Generation Time: Apr 02, 2018 at 05:34 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -37,6 +37,20 @@ CREATE TABLE `cashier` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `deskripsi` varchar(256) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `img_url` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `meja`
 --
 
@@ -56,6 +70,8 @@ CREATE TABLE `menu` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `harga` decimal(10,0) NOT NULL,
+  `img_url` varchar(256) DEFAULT NULL,
+  `id_kategori` int(11) NOT NULL,
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -83,6 +99,7 @@ CREATE TABLE `order_menu` (
 CREATE TABLE `order_menu_line` (
   `id` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
+  `harga` decimal(10,0) NOT NULL,
   `id_order` int(11) NOT NULL,
   `id_menu` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -113,6 +130,7 @@ CREATE TABLE `transaction` (
 CREATE TABLE `waiter` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
+  `pin` varchar(256) NOT NULL,
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -124,6 +142,12 @@ CREATE TABLE `waiter` (
 -- Indexes for table `cashier`
 --
 ALTER TABLE `cashier`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -178,6 +202,11 @@ ALTER TABLE `waiter`
 ALTER TABLE `cashier`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `meja`
 --
 ALTER TABLE `meja`
@@ -201,7 +230,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `waiter`
 --
 ALTER TABLE `waiter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
