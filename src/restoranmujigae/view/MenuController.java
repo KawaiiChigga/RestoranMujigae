@@ -5,7 +5,6 @@
  */
 package restoranmujigae.view;
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,9 +21,10 @@ import javafx.stage.Stage;
  *
  * @author Glenn Hizkia Naftali
  */
-public class MenuController{
+public class MenuController {
+
     @FXML
-    private void getBack(ActionEvent event) throws IOException{
+    private void getAppetizer(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -36,35 +36,69 @@ public class MenuController{
         stage.show();
         stage.setFullScreen(true);
     }
-    
+
     @FXML
-    private void getAppetizer(){
-        System.out.println("Return Appetizer");
-        
+    private void getMainCourse(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.setMinHeight(stage.getHeight());
+        stage.setMinWidth(stage.getWidth());
+        stage.show();
+        stage.setFullScreen(true);
     }
-    
+
     @FXML
-    private void getMainCourse(){
-        System.out.println("Return Main Course");
+    private void getDrinks(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.setMinHeight(stage.getHeight());
+        stage.setMinWidth(stage.getWidth());
+        stage.show();
+        stage.setFullScreen(true);
     }
-    
+
     @FXML
-    private void getDrinks(ActionEvent event){
-        System.out.println("Return Drink");
+    private void getDesserts(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.setMinHeight(stage.getHeight());
+        stage.setMinWidth(stage.getWidth());
+        stage.show();
+        stage.setFullScreen(true);
     }
-    
+
+//    @FXML
+//    private void getCallWaiters() {
+//        System.out.println("Notify Waiter!");
+//    }
      @FXML
-    private void getDesserts(ActionEvent event){
-        System.out.println("Return Desserts");
+    private void getCallWaiters(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Waiters.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(false);
+        stage.setResizable(false);
+        stage.setMinHeight(stage.getHeight());
+        stage.setMinWidth(stage.getWidth());
+        stage.show();
+        stage.setFullScreen(true);
     }
-    
-      @FXML
-    private void getCallWaiters(ActionEvent event){
-        System.out.println("Return Desserts");
-    }
-    
+
     @FXML
-    private void getMyOrder(ActionEvent event) throws IOException{
+    private void getMyOrder(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MyOrder.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -76,11 +110,5 @@ public class MenuController{
         stage.show();
         stage.setFullScreen(true);
     }
-    
-    @FXML
-    private void getCallWaiter(){
-        System.out.println("Return Notify Waiter");
-    }
-
 
 }

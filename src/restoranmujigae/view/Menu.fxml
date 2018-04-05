@@ -73,7 +73,7 @@
                         </ImageView>
                         <ImageView fitHeight="96.0" fitWidth="124.0" layoutX="427.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../res/icon/type-04.png" />
+                              <Image url="@../res/icon/type-03.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="204.0" fitWidth="200.0" layoutX="27.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
@@ -138,10 +138,10 @@
                         </ImageView>
                         <ImageView fitHeight="204.0" fitWidth="200.0" layoutX="507.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../res/image/Dessert/Banana%20Split.png" />
+                              <Image url="@../res/image/Main%20Course/Eggs%20In%20Hell.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="558.0" layoutY="316.0" text="Banana Split" textFill="WHITE">
+                        <Label layoutX="561.0" layoutY="317.0" text="Eggs in Hell" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -186,7 +186,7 @@
                               <Font size="21.0" />
                            </font>
                         </Button>
-                        <Label layoutX="799.0" layoutY="316.0" text="Cake Berries" textFill="WHITE">
+                        <Label layoutX="793.0" layoutY="316.0" text="Pork Quesadilla" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -211,7 +211,7 @@
                               <Image url="@../res/image/Appetizer/Grilled%20Chicken%20Wings.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="78.0" layoutY="678.0" text="Banana Split" textFill="WHITE">
+                        <Label layoutX="69.0" layoutY="678.0" text="Caribbean Salad" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -246,7 +246,7 @@
                               <Font size="21.0" />
                            </font>
                         </Button>
-                        <Label layoutX="320.0" layoutY="678.0" text="Cake Berries" textFill="WHITE">
+                        <Label layoutX="281.0" layoutY="678.0" text="Winner Chicken Dinner" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -261,7 +261,7 @@
                               <Image url="@../res/image/Appetizer/Vegetable%20tian.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="558.0" layoutY="678.0" text="Banana Split" textFill="WHITE">
+                        <Label layoutX="555.0" layoutY="678.0" text="Vegetable tian" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -291,7 +291,7 @@
                               <Font size="21.0" />
                            </font>
                         </Button>
-                        <Label layoutX="799.0" layoutY="678.0" text="Cake Berries" textFill="WHITE">
+                        <Label layoutX="804.0" layoutY="678.0" text="Pulled Pork" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -318,37 +318,65 @@
             <AnchorPane layoutX="1053.0" layoutY="7.0" prefHeight="880.0" prefWidth="295.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="7.0">
                <children>
                   <Label layoutX="18.0" layoutY="-2.0" opacity="0.72" prefHeight="888.0" prefWidth="390.0" style="-fx-background-color: #2f221c;" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-26.0" AnchorPane.topAnchor="-2.0" />
-                  <Button id="btnAppetizer" fx:id="appetizer" graphicTextGap="0.0" layoutX="98.0" layoutY="316.0" mnemonicParsing="false" onAction="#getAppetizer" onMouseClicked="#getAppetizer" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                  <Button id="btnAppetizer" fx:id="appetizer" graphicTextGap="0.0" layoutX="97.0" layoutY="261.0" mnemonicParsing="false" onAction="#getAppetizer" onMouseClicked="#getAppetizer" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
                         <Font size="1.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <graphic>
+                        <ImageView fitHeight="103.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/icon/type-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button id="btnMainCourse" fx:id="mainCourse" graphicTextGap="0.0" layoutX="98.0" layoutY="460.0" mnemonicParsing="false" onAction="#getMainCourse" onMouseClicked="#getMainCourse" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                  <Button id="btnMainCourse" fx:id="mainCourse" graphicTextGap="0.0" layoutX="100.0" layoutY="384.0" mnemonicParsing="false" onAction="#getMainCourse" onMouseClicked="#getMainCourse" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
                         <Font size="1.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <graphic>
+                        <ImageView fitHeight="102.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/icon/type-03.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button id="btnDrinks" fx:id="drinks" graphicTextGap="0.0" layoutX="98.0" layoutY="603.0" mnemonicParsing="false" onAction="#getDrinks" onMouseClicked="#getDrinks" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                  <Button id="btnDrinks" fx:id="drinks" graphicTextGap="0.0" layoutX="100.0" layoutY="500.0" mnemonicParsing="false" onAction="#getDrinks" onMouseClicked="#getDrinks" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
                         <Font size="1.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <graphic>
+                        <ImageView fitHeight="87.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/icon/type-02.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button id="btnCallWaiter" fx:id="callWaiter" graphicTextGap="0.0" layoutX="98.0" layoutY="171.0" mnemonicParsing="false" onAction="#getCallWaiters" onMouseClicked="#getCallWaiter" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                  <Button id="btnCallWaiter" fx:id="callWaiter" graphicTextGap="0.0" layoutX="97.0" layoutY="141.0" mnemonicParsing="false" onAction="#getCallWaiters" onMouseClicked="#getCallWaiters" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
                         <Font size="1.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <graphic>
+                        <ImageView fitHeight="91.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/icon/button2-04.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                   <Button id="btnCall" fx:id="myOrder" graphicTextGap="0.0" layoutX="98.0" layoutY="25.0" mnemonicParsing="false" onAction="#getMyOrder" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
@@ -366,32 +394,14 @@
                      </graphic>
                   </Button>
                   <Label layoutX="80.0" layoutY="15.0" maxWidth="38.0" prefHeight="35.0" prefWidth="38.0" style="-fx-background-color: red; -fx-alignment: center; -fx-background-radius: 20; -fx-max-width: 35;" text="1" textFill="WHITE" />
-                  <Button fx:id="desserts" layoutX="92.0" layoutY="748.0" mnemonicParsing="false" onAction="#getDesserts" style="-fx-background-color: transparent;" />
-                  <ImageView fitHeight="91.0" fitWidth="118.0" layoutX="100.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../res/icon/button2-04.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="103.0" fitWidth="116.0" layoutX="101.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../res/icon/type-01.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="102.0" fitWidth="113.0" layoutX="103.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../res/icon/type-03.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="87.0" fitWidth="135.0" layoutX="102.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../res/icon/type-02.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="88.0" fitWidth="148.0" layoutX="103.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../res/icon/type-04.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="desserts" layoutX="94.0" layoutY="610.0" mnemonicParsing="false" onAction="#getDesserts" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="88.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/icon/type-04.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
             </AnchorPane>
          </children>

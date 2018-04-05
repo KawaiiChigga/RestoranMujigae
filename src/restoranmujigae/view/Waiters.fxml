@@ -65,27 +65,15 @@
                      <children>
                         <ImageView fitHeight="96.0" fitWidth="124.0" layoutX="427.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../res/icon/button-06.png" />
+                              <Image url="@../res/icon/button2-04.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="555.0" layoutY="359.0" text="Classic Ice Cream" textFill="WHITE" />
                         <TableView layoutX="19.0" layoutY="113.0" prefHeight="545.0" prefWidth="1000.0">
                           <columns>
-                            <TableColumn prefWidth="685.0" text="Name" />
-                            <TableColumn minWidth="0.0" prefWidth="156.66668701171875" text="Quantity" />
-                              <TableColumn prefWidth="159.33331298828125" text="Price" />
+                            <TableColumn prefWidth="999.0" text="Table" />
                           </columns>
                         </TableView>
-                        <Label layoutX="698.0" layoutY="676.0" text="Total Price: ">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="853.0" layoutY="677.0" text="Rp. 300.000">
-                           <font>
-                              <Font size="28.0" />
-                           </font>
-                        </Label>
                      </children>
                 </AnchorPane>
                </content>
