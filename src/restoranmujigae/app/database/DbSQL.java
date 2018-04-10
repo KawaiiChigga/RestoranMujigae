@@ -37,7 +37,8 @@ public class DbSQL {
     
     public void logOff(){
         try {
-            con.close();
+            db.con.close();
+            db = null;
         } catch (Exception ex) {
         }
     }
