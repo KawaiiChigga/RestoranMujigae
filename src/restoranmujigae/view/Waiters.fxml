@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.MenuController">
+<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.MenuController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -74,6 +74,21 @@
                             <TableColumn prefWidth="999.0" text="Table" />
                           </columns>
                         </TableView>
+                        <Button id="btnCallWaiter" fx:id="start" graphicTextGap="0.0" layoutX="33.0" layoutY="27.0" mnemonicParsing="false" onAction="#getStart" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="81.0">
+                                 <image>
+                                    <Image url="@../res/icon/type-05png.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                 </AnchorPane>
                </content>

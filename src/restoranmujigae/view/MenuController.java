@@ -29,12 +29,10 @@ public class MenuController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
-        stage.setMaximized(false);
+        stage.setMaximized(true);
         stage.setResizable(false);
-        stage.setMinHeight(stage.getHeight());
-        stage.setMinWidth(stage.getWidth());
-        stage.show();
         stage.setFullScreen(true);
+        stage.show();
     }
 
     @FXML
@@ -43,8 +41,8 @@ public class MenuController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
-        stage.setMaximized(false);
-        stage.setResizable(false);
+        stage.setMaximized(true);
+        stage.setResizable(true);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -57,8 +55,8 @@ public class MenuController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
-        stage.setMaximized(false);
-        stage.setResizable(false);
+        stage.setMaximized(true);
+        stage.setResizable(true);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -71,8 +69,8 @@ public class MenuController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
-        stage.setMaximized(false);
-        stage.setResizable(false);
+        stage.setMaximized(true);
+        stage.setResizable(true);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -85,30 +83,50 @@ public class MenuController {
 //    }
      @FXML
     private void getCallWaiters(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Waiters.fxml"));
+        /*Parent root = FXMLLoader.load(getClass().getResource("Waiters.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
-        stage.setMaximized(false);
-        stage.setResizable(false);
+        stage.setMaximized(true);
+        stage.setResizable(true);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
-        stage.setFullScreen(true);
+        stage.setFullScreen(true);*/
+        System.out.println("Send CallWaiter");
     }
-
+    
     @FXML
     private void getMyOrder(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MyOrder.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
-        stage.setMaximized(false);
-        stage.setResizable(false);
+        stage.setMaximized(true);
+        stage.setResizable(true);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
         stage.setFullScreen(true);
+    }
+    
+    @FXML
+    private void getStart(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(true);
+        stage.setResizable(true);
+        stage.setMinHeight(stage.getHeight());
+        stage.setMinWidth(stage.getWidth());
+        stage.show();
+        stage.setFullScreen(true);
+    }
+    
+    @FXML
+    private void getCheckout(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
     }
 
 }
