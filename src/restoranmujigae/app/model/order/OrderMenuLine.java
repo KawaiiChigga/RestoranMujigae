@@ -19,6 +19,25 @@ public class OrderMenuLine {
     private OrderMenu order;
     private Menu menu;
 
+    // Create OrderMenuLine
+    public OrderMenuLine(int qty, double harga, OrderMenu order, Menu menu) {
+        this.qty = qty;
+        this.harga = harga;
+        this.order = order;
+        this.menu = menu;
+    }
+
+    // Get OrderMenuLine
+    public OrderMenuLine(int id, int qty, double harga, int id_order, int id_menu, LocalDateTime created_at, boolean is_deleted) {
+        this.id = id;
+        this.qty = qty;
+        this.harga = harga;
+        this.id_order = id_order;
+        this.id_menu = id_menu;
+        this.created_at = created_at;
+        this.is_deleted = is_deleted;
+    }
+    
     public int getId() {
         return id;
     }

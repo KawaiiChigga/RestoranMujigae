@@ -10,16 +10,14 @@ public class Pelayan {
     private String nama;
     private boolean status;
     private String pin;
-
-    public Pelayan() {
-        
-    }
     
+    // Create Pelayan
     public Pelayan(String nama, String pin) {
         this.nama = nama;
         this.pin = pin;
     }
 
+    // Get Pelayan
     public Pelayan(int id, String nama, boolean status, String pin) {
         this.id = id;
         this.nama = nama;

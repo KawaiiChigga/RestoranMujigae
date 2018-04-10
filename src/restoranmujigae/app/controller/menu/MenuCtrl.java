@@ -7,26 +7,34 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 import restoranmujigae.app.database.DbSQL;
+import restoranmujigae.app.model.menu.Menu;
 
 public class MenuCtrl {
 
-//    public static List<Menu> getAllMenu() throws SQLException {
-//        List<Menu> list = new LinkedList();
-//        DBConnector conn = new DBConnector();
-//        conn.connect();
-//        Statement stm = conn.con.createStatement();
-//        ResultSet hasil = stm.executeQuery("SELECT * FROM menu");
-//        while (hasil.next()) {
-//            Menu menu = new Menu(
-//                hasil.getInt("id"), 
-//                hasil.getString("nama"),
-//                hasil.getDouble("harga"), 
-//                hasil.getBoolean("status")
-//            );
-//            list.add(menu);
-//        }
-//        conn.disconnect();
-//        return list;
-//    }
+ public static Menu getMenu(int id) {
+        Menu w = null;
+        String sql;
+        Statement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            stm = db.getCon().createStatement();
+            sql = "SELECT * FROM menu WHERE id = " + id;
+            ResultSet rs = stm.executeQuery(sql);
+            if (rs.next()) {
+                w = new Menu(
+                        rs.getInt("id"),
+                        rs.getString("nama"),
+                        rs.getDouble("harga"),
+                        rs.getString("img_url"),
+                        rs.getInt("id_kategori"),
+                        rs.getBoolean("status")
+                );
+            }
+            db.logOff();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return w;
+    }
 
 }

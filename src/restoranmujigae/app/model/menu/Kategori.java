@@ -12,6 +12,14 @@ public class Kategori {
     private boolean status;
     private String img_url;
 
+    public Kategori(int id, String nama, String deskripsi, boolean status, String img_url) {
+        this.id = id;
+        this.nama = nama;
+        this.deskripsi = deskripsi;
+        this.status = status;
+        this.img_url = img_url;
+    }
+    
     public int getId() {
         return id;
     }

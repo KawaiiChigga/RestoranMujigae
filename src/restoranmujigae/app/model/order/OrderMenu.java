@@ -6,6 +6,7 @@
 package restoranmujigae.app.model.order;
 
 import java.time.LocalDateTime;
+import restoranmujigae.app.controller.order.WaiterCtrl;
 
 
 public class OrderMenu {
@@ -18,6 +19,28 @@ public class OrderMenu {
     private Meja meja;
     private Pelayan waiter;
 
+    public OrderMenu(){
+        
+    }
+    
+    // Create Order
+    public OrderMenu(Meja meja, Pelayan waiter) {
+        this.meja = meja;
+        this.waiter = waiter;
+    }
+
+    // Get Order
+    public OrderMenu(int id, boolean status, int id_meja, int id_waiter, LocalDateTime created_at, boolean is_deleted) {
+        this.id = id;
+        this.status = status;
+        this.id_meja = id_meja;
+        this.id_waiter = id_waiter;
+        this.created_at = created_at;
+        this.is_deleted = is_deleted;
+    }
+
+    
+    
     public int getId() {
         return id;
     }
@@ -58,11 +81,11 @@ public class OrderMenu {
         this.created_at = created_at;
     }
 
-    public boolean isIs_deleted() {
+    public boolean is_deleted() {
         return is_deleted;
     }
 
-    public void setIs_deleted(boolean is_deleted) {
+    public void set_deleted(boolean is_deleted) {
         this.is_deleted = is_deleted;
     }
 
@@ -75,12 +98,14 @@ public class OrderMenu {
     }
 
     public Pelayan getWaiter() {
-        return waiter;
+        return WaiterCtrl.getWaiter(this.id_waiter);
     }
 
     public void setWaiter(Pelayan waiter) {
-        this.waiter = waiter;
+//        this.waiter = waiter;
+        this.id_waiter = waiter.getId();
     }
+    
     
     
 }

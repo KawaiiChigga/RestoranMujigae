@@ -16,11 +16,13 @@ public class Menu {
 
     public Menu(){
     }
-    
-    public Menu(int id, String nama, double harga, boolean status) {
+
+    public Menu(int id, String nama, double harga, String img_url, int id_kategori, boolean status) {
         this.id = id;
         this.nama = nama;
         this.harga = harga;
+        this.img_url = img_url;
+        this.id_kategori = id_kategori;
         this.status = status;
     }
 

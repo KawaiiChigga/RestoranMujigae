@@ -10,6 +10,18 @@ public class Meja {
     private String noMeja;
     private boolean status;
 
+    // Create Meja
+    public Meja(String noMeja) {
+        this.noMeja = noMeja;
+    }
+
+    // Get Meja
+    public Meja(int id, String noMeja, boolean status) {
+        this.id = id;
+        this.noMeja = noMeja;
+        this.status = status;
+    }
+    
     public int getId() {
         return id;
     }
