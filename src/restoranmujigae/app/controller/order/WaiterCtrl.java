@@ -79,4 +79,9 @@ public class WaiterCtrl {
         }
         return true;
     }
+    
+    public static void confirmOrder(){
+        
+    }
+    
 }
