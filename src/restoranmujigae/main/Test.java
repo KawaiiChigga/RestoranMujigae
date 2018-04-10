@@ -7,8 +7,10 @@ package restoranmujigae.main;
 
 import java.util.ArrayList;
 import java.util.List;
+import restoranmujigae.app.controller.order.OrderCtrl;
 import restoranmujigae.app.model.order.Pelayan;
 import restoranmujigae.app.controller.order.WaiterCtrl;
+import restoranmujigae.app.model.order.OrderMenuLine;
 
 public class Test {
 
@@ -16,6 +18,12 @@ public class Test {
 //        prepareData();
         Pelayan p = WaiterCtrl.getWaiter(3);
         System.out.println(p.getNama());
+        
+        System.out.println("hai");
+        List<OrderMenuLine> hasil = OrderCtrl.getCartByMeja(1);
+        for (OrderMenuLine orderMenuLine : hasil) {
+            System.out.println(orderMenuLine.getHarga());
+        }
     }
 
     public static void main(String[] args) {
