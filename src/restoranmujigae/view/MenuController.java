@@ -7,6 +7,7 @@ package restoranmujigae.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
 /**
@@ -133,7 +135,17 @@ public class MenuController {
     
     @FXML
     private void getEggs(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        TextInputDialog dialog = new TextInputDialog("1");
+        dialog.setGraphic(null);
+        dialog.setTitle("Input Quantity");
+        dialog.setHeaderText("Ordering Eggs");
+        dialog.setContentText("Please enter quantity:");
+
+        // Traditional way to get the response value.
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            System.out.println("Egg Quantity: " + result.get());
+}
     }
     @FXML
     private void getGrilled(ActionEvent event) throws IOException {
