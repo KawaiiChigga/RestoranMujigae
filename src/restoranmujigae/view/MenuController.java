@@ -27,7 +27,7 @@ public class MenuController {
 
     @FXML
     private void getAppetizer(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Desserts.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Appetizer.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
@@ -53,7 +53,7 @@ public class MenuController {
 
     @FXML
     private void getDrinks(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Desserts.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Drinks.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
@@ -210,5 +210,74 @@ public class MenuController {
     private void getShortcake(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");
     }
+    
+     //APPETIZER
+    
+     @FXML
+    private void getBacon(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getCari(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getFeta(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getWings(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getSavory(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getTurnip(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getTaco(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getVegetable(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
 
+    //APPETIZER
+    
+     @FXML
+    private void getCoke(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getCute(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getIceCoffee(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getJuice(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getChocoMilkshake(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getOrange(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getPineapple(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getSexy(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
 }
