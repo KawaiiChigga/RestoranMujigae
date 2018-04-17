@@ -37,7 +37,7 @@ public class MenuController {
 
     @FXML
     private void getMainCourse(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Desserts.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Maincourse.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
@@ -126,6 +126,76 @@ public class MenuController {
     
     @FXML
     private void getCheckout(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    
+    //MAINCOURSE
+    
+    @FXML
+    private void getEggs(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getGrilled(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getPene(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getQue(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getPulled(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getSalmon(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getSch(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getSpaghetti(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    
+    //DESSERTS
+    
+     @FXML
+    private void getBanana(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getCake(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getClassic(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getFruit(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getChoco(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getOreo(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getPan(ActionEvent event) throws IOException {
+        System.out.println("Send Checkout");
+    }
+    @FXML
+    private void getShortcake(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");
     }
 
