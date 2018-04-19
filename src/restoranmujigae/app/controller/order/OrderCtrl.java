@@ -38,7 +38,7 @@ public class OrderCtrl {
                         rs.getBoolean("status")
                 );
             }
-            db.logOff();
+            stm.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }
@@ -66,7 +66,7 @@ public class OrderCtrl {
                     )
                 );
             }
-            db.logOff();
+            stm.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }
@@ -94,7 +94,7 @@ public class OrderCtrl {
                     )
                 );
             }
-            db.logOff();
+            stm.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }
@@ -127,7 +127,7 @@ public class OrderCtrl {
                     )
                 );
             }
-            db.logOff();
+            stm.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }
@@ -155,7 +155,7 @@ public class OrderCtrl {
                     rs.getBoolean("is_deleted")
                 );
             }
-            db.logOff();
+            stm.close();
         } catch (SQLException ex) {
             System.out.println(ex);
         }

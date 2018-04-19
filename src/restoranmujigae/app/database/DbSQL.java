@@ -23,19 +23,20 @@ public class DbSQL {
     private DbSQL() {
     }
 
-    public static synchronized DbSQL getInstance() {
+    public static synchronized DbSQL getInstance() throws SQLException {
         if (db == null) {
             db = new DbSQL();
             try {
                 Class.forName(driver).newInstance();
-                db.con = DriverManager.getConnection(url, username, password);
-            } catch (Exception ex) {
+            } catch (Exception e) {
+                throw new RuntimeException("Driver koneksi tidak ditemukan!");
             }
+            db.con = DriverManager.getConnection(url, username, password);
         }
         return db;
     }
-    
-    public void logOff(){
+
+    public void logOff() {
         try {
             db.con.close();
             db = null;
@@ -60,8 +61,6 @@ public class DbSQL {
         }
         return con;
     }
-
-    
 
     public void connect() {
         try {
