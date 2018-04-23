@@ -13,17 +13,19 @@ public class Menu {
     private int id_kategori;
     private boolean status;
     private Kategori kategori;
+    private String deskripsi;
 
     public Menu(){
     }
 
-    public Menu(int id, String nama, double harga, String img_url, int id_kategori, boolean status) {
+    public Menu(int id, String nama, double harga, String img_url, int id_kategori, boolean status, String deskripsi) {
         this.id = id;
         this.nama = nama;
         this.harga = harga;
         this.img_url = img_url;
         this.id_kategori = id_kategori;
         this.status = status;
+        this.deskripsi = deskripsi;
     }
 
     public int getId() {
@@ -81,5 +83,15 @@ public class Menu {
     public void setKategori(Kategori kategori) {
         this.kategori = kategori;
     }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
+    
+    
     
 }

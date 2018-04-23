@@ -5,9 +5,11 @@
  */
 package restoranmujigae.app.controller.order;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +18,57 @@ import restoranmujigae.app.model.menu.Menu;
 import restoranmujigae.app.model.order.Pelayan;
 
 public class WaiterCtrl {
+
+    public static boolean loginPelayan(String nama, String pin) {
+        boolean result = false;
+        Pelayan tmpLogin = null;
+        String sql;
+        PreparedStatement stm;
+        ResultSet rs;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "select * from waiter WHERE nama = ? and pin = ?";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setString(1, nama);
+            stm.setString(2, pin);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                tmpLogin = new Pelayan(rs.getInt("id"), rs.getString("nama"), rs.getString("pin"), rs.getBoolean("status"));
+            }
+            result = true;
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return result;
+    }
+
+
+    public static List<Pelayan> getAllWaiter() {
+        List<Pelayan> hasil = new ArrayList();
+        String sql;
+        Statement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            stm = db.getCon().createStatement();
+            sql = "SELECT * FROM waiter";
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                hasil.add(
+                        new Pelayan(
+                                rs.getInt("id"),
+                                rs.getString("nama"),
+                                rs.getString("pin"),
+                                rs.getBoolean("status")
+                        )
+                );
+            }
+            stm.close();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return hasil;
+    }
 
     public static Pelayan getWaiter(int id) {
         Pelayan w = null;
@@ -30,8 +83,8 @@ public class WaiterCtrl {
                 w = new Pelayan(
                         rs.getInt("id"),
                         rs.getString("nama"),
-                        rs.getBoolean("status"),
-                        rs.getString("pin")
+                        rs.getString("pin"),
+                        rs.getBoolean("status")
                 );
             }
             db.logOff();
@@ -79,9 +132,9 @@ public class WaiterCtrl {
         }
         return true;
     }
-    
-    public static void confirmOrder(){
-        
+
+    public static void confirmOrder() {
+
     }
-    
+
 }

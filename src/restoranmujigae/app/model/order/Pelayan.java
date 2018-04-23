@@ -18,7 +18,7 @@ public class Pelayan {
     }
 
     // Get Pelayan
-    public Pelayan(int id, String nama, boolean status, String pin) {
+    public Pelayan(int id, String nama, String pin, boolean status) {
         this.id = id;
         this.nama = nama;
         this.status = status;

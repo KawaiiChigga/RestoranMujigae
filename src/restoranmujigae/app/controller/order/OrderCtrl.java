@@ -5,9 +5,11 @@
  */
 package restoranmujigae.app.controller.order;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -16,9 +18,36 @@ import restoranmujigae.app.database.DbSQL;
 import restoranmujigae.app.model.menu.Menu;
 import restoranmujigae.app.model.order.OrderMenu;
 import restoranmujigae.app.model.order.OrderMenuLine;
+import restoranmujigae.app.model.order.Pelayan;
 
 public class OrderCtrl {
 
+    public static boolean createMenu(int id, String nama, int harga, String img_url, int id_kat, String deskripsi) {
+        boolean status = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "insert into menu (id,nama,harga,img_url,id_kategori,deskripsi) values (?,?,?,?,?,?)";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.setString(2, nama);
+            stm.setInt(3, harga);
+            stm.setString(4, img_url);
+            stm.setInt(5, id_kat);
+            stm.setString(6, deskripsi);
+            int hasil = stm.executeUpdate();
+            if (hasil > 0) {
+                status = true;
+            }
+            System.out.println(hasil + " row(s) effected");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+    
+    
     public static Menu getMenu(int id) {
         Menu w = null;
         String sql;
@@ -35,7 +64,8 @@ public class OrderCtrl {
                         rs.getDouble("harga"),
                         rs.getString("img_url"),
                         rs.getInt("id_kategori"),
-                        rs.getBoolean("status")
+                        rs.getBoolean("status"),
+                        rs.getString("deskripsi")
                 );
             }
             stm.close();
@@ -56,14 +86,15 @@ public class OrderCtrl {
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {
                 hasil.add(
-                    new Menu(
-                        rs.getInt("id"),
-                        rs.getString("nama"),
-                        rs.getDouble("harga"),
-                        rs.getString("img_url"),
-                        rs.getInt("id_kategori"),
-                        rs.getBoolean("status")
-                    )
+                        new Menu(
+                                rs.getInt("id"),
+                                rs.getString("nama"),
+                                rs.getDouble("harga"),
+                                rs.getString("img_url"),
+                                rs.getInt("id_kategori"),
+                                rs.getBoolean("status"),
+                                rs.getString("deskripsi")
+                        )
                 );
             }
             stm.close();
@@ -84,14 +115,15 @@ public class OrderCtrl {
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {
                 hasil.add(
-                    new Menu(
-                        rs.getInt("id"),
-                        rs.getString("nama"),
-                        rs.getDouble("harga"),
-                        rs.getString("img_url"),
-                        rs.getInt("id_kategori"),
-                        rs.getBoolean("status")
-                    )
+                        new Menu(
+                                rs.getInt("id"),
+                                rs.getString("nama"),
+                                rs.getDouble("harga"),
+                                rs.getString("img_url"),
+                                rs.getInt("id_kategori"),
+                                rs.getBoolean("status"),
+                                rs.getString("deskripsi")
+                        )
                 );
             }
             stm.close();
@@ -116,15 +148,15 @@ public class OrderCtrl {
             while (rs.next()) {
                 LocalDateTime created_at = LocalDateTime.parse(rs.getTimestamp("created_at").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
                 hasil.add(
-                    new OrderMenuLine(
-                        rs.getInt("id"), 
-                        rs.getInt("qty"), 
-                        rs.getDouble("harga"), 
-                        rs.getInt("id_order"), 
-                        rs.getInt("id_menu"),
-                        created_at, 
-                        rs.getBoolean("is_deleted")
-                    )
+                        new OrderMenuLine(
+                                rs.getInt("id"),
+                                rs.getInt("qty"),
+                                rs.getDouble("harga"),
+                                rs.getInt("id_order"),
+                                rs.getInt("id_menu"),
+                                created_at,
+                                rs.getBoolean("is_deleted")
+                        )
                 );
             }
             stm.close();
@@ -147,12 +179,12 @@ public class OrderCtrl {
             if (rs.next()) {
                 LocalDateTime created_at = LocalDateTime.parse(rs.getTimestamp("created_at").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
                 hasil = new OrderMenu(
-                    rs.getInt("id"), 
-                    rs.getBoolean("status"), 
-                    rs.getInt("id_meja"), 
-                    rs.getInt("id_waiter"), 
-                    created_at, 
-                    rs.getBoolean("is_deleted")
+                        rs.getInt("id"),
+                        rs.getBoolean("status"),
+                        rs.getInt("id_meja"),
+                        rs.getInt("id_waiter"),
+                        created_at,
+                        rs.getBoolean("is_deleted")
                 );
             }
             stm.close();
@@ -161,14 +193,81 @@ public class OrderCtrl {
         }
         return hasil;
     }
-    
-    public static boolean addToCart(int id_meja, List<OrderMenuLine> listMenu) {
-        OrderMenu order = OrderCtrl.getActiveOrder(id_meja);
-        if (order == null) {
-            return false;
-        }
-        return true;
 
+    public static boolean createOrderMenu(int id_meja, Pelayan p) {
+        boolean status = false;
+        LocalDateTime ldt = LocalDateTime.now();
+        String sql;
+        PreparedStatement stm;
+        OrderMenu om = null;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "insert into order_menu (status,id_meja,id_waiter,created_at,is_deleted) values (?,?,?,?,?)";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setInt(1, 1);
+            stm.setInt(2, id_meja);
+            stm.setInt(3, p.getId());
+            stm.setTimestamp(4, Timestamp.valueOf(ldt));
+            stm.setBoolean(5, false);
+            int hasil = stm.executeUpdate();
+            if (hasil > 0) {
+                status = true;
+            }
+            System.out.println(hasil + " row(s) effected");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+
+    public static boolean createOrderMenuLine(int qty, int harga, int id_order, int id_menu) {
+        boolean status = false;
+        LocalDateTime ldt = LocalDateTime.now();
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "insert into order_menu_line (qty,harga,id_order,id_menu,created_at) values (?,?,?,?,?)";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setInt(1, qty);
+            stm.setInt(2, harga);
+            stm.setInt(3, id_order);
+            stm.setInt(4, id_menu);
+            stm.setTimestamp(5, Timestamp.valueOf(ldt));
+            int hasil = stm.executeUpdate();
+            if (hasil > 0) {
+                status = true;
+            }
+            System.out.println(hasil + " row(s) effected");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+
+    public static boolean updateOrderMenuLine(int id_menu_line, boolean delete, int qty) {
+        boolean status = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "update order_menu_line set qty = ?, is_deleted = ? where id = ?";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setInt(1, qty);
+            stm.setBoolean(2, delete);
+            stm.setInt(3, qty);
+
+            if (stm.executeUpdate() > 0) {
+                status = true;
+                System.out.println("sukses");
+            } else {
+                System.out.println("gagal");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
     }
 
 }
