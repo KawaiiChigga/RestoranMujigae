@@ -14,6 +14,7 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
+import restoranmujigae.app.controller.order.OrderCtrl;
 
 public class MenuMainCourCtrl extends MenuCtrl {
     public MenuMainCourCtrl() {
@@ -23,17 +24,9 @@ public class MenuMainCourCtrl extends MenuCtrl {
     //MAINCOURSE
     @FXML
     private void getEggs(ActionEvent event) throws IOException {
-        TextInputDialog dialog = new TextInputDialog("1");
-        dialog.setGraphic(null);
-        dialog.setTitle("Input Quantity");
-        dialog.setHeaderText("Ordering Eggs");
-        dialog.setContentText("Please enter quantity:");
-
-        // Traditional way to get the response value.
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()) {
-            System.out.println("Egg Quantity: " + result.get());
-        }
+        String nama = OrderCtrl.searchMenu("Eggs").get(0).getNama();
+        System.out.println(nama);
+        orderMenu(OrderCtrl.searchMenu("Eggs").get(0));
     }
 
     @FXML
@@ -64,7 +57,7 @@ public class MenuMainCourCtrl extends MenuCtrl {
     private void getPene(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");
     }
-
+ 
     @FXML
     private void getQue(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");

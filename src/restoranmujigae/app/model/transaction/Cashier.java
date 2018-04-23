@@ -10,6 +10,14 @@ public class Cashier {
     private String nama;
     private boolean status;
 
+    public Cashier() {
+    }
+
+    public Cashier(String nama, boolean status) {
+        this.nama = nama;
+        this.status = status;
+    }
+    
     public int getId() {
         return id;
     }

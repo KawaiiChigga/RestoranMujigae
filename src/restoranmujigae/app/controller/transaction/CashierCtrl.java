@@ -16,6 +16,27 @@ import restoranmujigae.app.model.order.Pelayan;
 
 public class CashierCtrl {
     
+    public static boolean createCashier(String nama, boolean status) {
+        boolean stat = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "insert into cashier (nama, status) values (?,?)";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setString(1, nama);
+            stm.setBoolean(2, status);
+            int hasil = stm.executeUpdate();
+            if (hasil > 0) {
+                stat = true;
+            }
+            System.out.println(hasil + " row(s) effected");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return stat;
+    }
+    
     public static boolean createTransaction (int id_order, int id_cashier) {
         boolean status = false;
         String sql;

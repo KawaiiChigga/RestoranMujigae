@@ -6,15 +6,32 @@
 package restoranmujigae.view.controller;
 
 import java.io.IOException;
+import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
+import restoranmujigae.app.model.menu.Menu;
 
 public class MenuCtrl {
+    protected void orderMenu(Menu menu) {
+        TextInputDialog dialog = new TextInputDialog("1");
+        dialog.setGraphic(null);
+        dialog.setTitle("Input Quantity");
+        dialog.setHeaderText("Ordering " + menu.getNama());
+        dialog.setContentText("Please enter quantity:");
+
+        // Traditional way to get the response value.
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()) {
+//            System.out.println("Egg Quantity: " + result.get());
+        }
+    }
+    
     @FXML
     protected void getAppetizer(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Appetizer.fxml"));

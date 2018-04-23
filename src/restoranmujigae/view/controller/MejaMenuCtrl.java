@@ -22,6 +22,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import restoranmujigae.app.controller.order.WaiterCtrl;
+import restoranmujigae.app.model.order.Pelayan;
 
 public class MejaMenuCtrl {
     
@@ -56,23 +58,21 @@ public class MejaMenuCtrl {
     protected void getCheckout(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");
         List<String> choices = new ArrayList<>();
-        choices.add("Waiter 1");
-        choices.add("Waiter 2");
-        choices.add("Waiter 3");
+        List<Pelayan> listPelayan = WaiterCtrl.getAllWaiter();
+        for (Pelayan pelayan : listPelayan) {
+            choices.add(pelayan.getNama());
+        }
 
-        ChoiceDialog<String> dialog2 = new ChoiceDialog<>("Waiter 1", choices);
+        ChoiceDialog<String> dialog2 = new ChoiceDialog<>(listPelayan.get(0).getNama(), choices);
         dialog2.setTitle("Checkout Bill");
         dialog2.setHeaderText("Waiter");
-        dialog2.setContentText("Choose your waiter:");
+        dialog2.setContentText("Choose your waiter: ");
 
-        // Traditional way to get the response value.
         Optional<String> result2 = dialog2.showAndWait();
         if (result2.isPresent()) {
             System.out.println("Your choice: " + result2.get());
         }
 
-//        PasswordField password = new PasswordField();
-//        password.setPromptText("Password");
         TextInputDialog dialog = new TextInputDialog();
         dialog.setGraphic(null);
         dialog.setTitle("Checkout Bill");
@@ -83,21 +83,21 @@ public class MejaMenuCtrl {
         grid.setVgap(10);
         grid.setPadding(new Insets(20, 150, 10, 10));
 
-//        TextField username = new TextField();
-//        username.setPromptText("Username");
         PasswordField password = new PasswordField();
         password.setPromptText("Password");
 
-//        grid.add(new Label("Username:"), 0, 0);
-//        grid.add(username, 1, 0);
         grid.add(new Label("PIN:"), 0, 1);
         grid.add(password, 1, 1);
 
         dialog.getDialogPane().setContent(grid);
-        // Traditional way to get the response value.
+        
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()) {
-            System.out.println("PIN: " + password.getText());
+            if (WaiterCtrl.loginPelayan(result2.get(), password.getText())){
+                System.out.println("Login berhasil");
+            } else {
+                System.out.println("Bohong!");
+            }
         }
     }
 }
