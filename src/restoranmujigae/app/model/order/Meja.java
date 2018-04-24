@@ -9,6 +9,7 @@ public class Meja {
     private int id;
     private String noMeja;
     private boolean status;
+    private boolean callwaiter;
 
     // Create Meja
     public Meja(String noMeja) {
@@ -16,10 +17,11 @@ public class Meja {
     }
 
     // Get Meja
-    public Meja(int id, String noMeja, boolean status) {
+    public Meja(int id, String noMeja, boolean status, boolean callwaiter) {
         this.id = id;
         this.noMeja = noMeja;
         this.status = status;
+        this.callwaiter = callwaiter;
     }
     
     public int getId() {
@@ -45,6 +47,13 @@ public class Meja {
     public void setStatus(boolean status) {
         this.status = status;
     }
-    
+
+    public boolean isCallwaiter() {
+        return callwaiter;
+    }
+
+    public void setCallwaiter(boolean callwaiter) {
+        this.callwaiter = callwaiter;
+    }
     
 }

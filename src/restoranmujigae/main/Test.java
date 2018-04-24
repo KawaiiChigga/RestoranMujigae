@@ -22,10 +22,10 @@ public class Test {
 
     public Test() {
         addMeja();
-//        addWaiter();
-//        addCashier();
-//        addKategori();
-//        addMenu();
+        addWaiter();
+        addCashier();
+        addKategori();
+        addMenu();
     }
 
     public static void main(String[] args) {

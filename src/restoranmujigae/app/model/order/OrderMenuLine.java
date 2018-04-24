@@ -16,6 +16,7 @@ public class OrderMenuLine {
     private int id_menu;
     private LocalDateTime created_at;
     private boolean is_deleted;
+    private boolean status;
     private OrderMenu order;
     private Menu menu;
 
@@ -28,7 +29,7 @@ public class OrderMenuLine {
     }
 
     // Get OrderMenuLine
-    public OrderMenuLine(int id, int qty, double harga, int id_order, int id_menu, LocalDateTime created_at, boolean is_deleted) {
+    public OrderMenuLine(int id, int qty, double harga, int id_order, int id_menu, LocalDateTime created_at, boolean is_deleted, boolean status) {
         this.id = id;
         this.qty = qty;
         this.harga = harga;
@@ -36,6 +37,7 @@ public class OrderMenuLine {
         this.id_menu = id_menu;
         this.created_at = created_at;
         this.is_deleted = is_deleted;
+        this.status = status;
     }
     
     public int getId() {
@@ -108,6 +110,14 @@ public class OrderMenuLine {
 
     public void setMenu(Menu menu) {
         this.menu = menu;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
     
     

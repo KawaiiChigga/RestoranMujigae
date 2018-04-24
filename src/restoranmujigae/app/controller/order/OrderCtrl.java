@@ -129,7 +129,8 @@ public class OrderCtrl {
                                 rs.getInt("id_order"),
                                 rs.getInt("id_menu"),
                                 created_at,
-                                rs.getBoolean("is_deleted")
+                                rs.getBoolean("is_deleted"),
+                                rs.getBoolean("status")
                         )
                 );
             }

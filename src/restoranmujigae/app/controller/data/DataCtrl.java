@@ -53,7 +53,8 @@ public class DataCtrl {
                 hasil.add(new Meja(
                         rs.getInt("id"),
                         rs.getString("noMeja"),
-                        rs.getBoolean("status"))
+                        rs.getBoolean("status"),
+                        rs.getBoolean("callwaiter"))
                 );
             }
             stm.close();
