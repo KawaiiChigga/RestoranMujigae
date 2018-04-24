@@ -22,7 +22,7 @@ import restoranmujigae.app.model.order.Pelayan;
 
 public class OrderCtrl {
 
-    public static boolean createMenu(int id, String nama, int harga, String img_url, int id_kat, String deskripsi) {
+    public static boolean createMenu(int id, String nama, double harga, String img_url, int id_kat, String deskripsi) {
         boolean status = false;
         String sql;
         PreparedStatement stm;
@@ -32,7 +32,7 @@ public class OrderCtrl {
             stm = db.getCon().prepareStatement(sql);
             stm.setInt(1, id);
             stm.setString(2, nama);
-            stm.setInt(3, harga);
+            stm.setDouble(3, harga);
             stm.setString(4, img_url);
             stm.setInt(5, id_kat);
             stm.setString(6, deskripsi);
@@ -45,6 +45,28 @@ public class OrderCtrl {
             e.printStackTrace();
         }
         return status;
+    }
+    
+    public static boolean createKategori(int id, String nama, boolean status) {
+        boolean stat = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "insert into kategori (id, nama, status) values (?,?,?)";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setInt(1, id);
+            stm.setString(2, nama);
+            stm.setBoolean(3, true);
+            int hasil = stm.executeUpdate();
+            if (hasil > 0) {
+                stat = true;
+            }
+            System.out.println(hasil + " row(s) effected");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return stat;
     }
     
     

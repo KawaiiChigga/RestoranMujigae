@@ -15,7 +15,12 @@ public class Menu {
     private Kategori kategori;
     private String deskripsi;
 
-    public Menu(){
+    public Menu(String nama, double harga, int id_kategori, boolean status, String deskripsi){
+        this.nama = nama;
+        this.harga = harga;
+        this.id_kategori = id_kategori;
+        this.status = status;
+        this.deskripsi = deskripsi;
     }
 
     public Menu(int id, String nama, double harga, String img_url, int id_kategori, boolean status, String deskripsi) {

@@ -33,9 +33,9 @@ public class WaiterCtrl {
             stm.setString(2, pin);
             rs = stm.executeQuery();
             while (rs.next()) {
+                result = true;
                 tmpLogin = new Pelayan(rs.getInt("id"), rs.getString("nama"), rs.getString("pin"), rs.getBoolean("status"));
             }
-            result = true;
 
         } catch (SQLException ex) {
             System.out.println(ex);
