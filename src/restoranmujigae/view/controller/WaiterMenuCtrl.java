@@ -23,26 +23,16 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class MejaOrderCtrl {
+public class WaiterMenuCtrl {
     
     @FXML
-    private void getStart(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Start.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
-        stage.setMinHeight(stage.getHeight());
-        stage.setMinWidth(stage.getWidth());
-        stage.show();
-        stage.setFullScreen(true);
-    }
-    
-    @FXML
-    protected void getCheckout(ActionEvent event) throws IOException {
-        
-    }
+    protected void getMejaNotif(ActionEvent event) throws IOException {
 
+    }
+    
+    @FXML
+    protected void getRefresh(ActionEvent event) throws IOException {
+            
+    }
     
 }
