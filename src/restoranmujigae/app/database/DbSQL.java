@@ -9,13 +9,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import restoranmujigae.app.controller.data.PropertiesLoader;
 
 public class DbSQL {
 
     private static String driver = "com.mysql.jdbc.Driver";
-    private static String url = "jdbc:mysql://localhost/restoran_mujigae";
-    private static String username = "root";
-    private static String password = "";
+    private static String url = "jdbc:mysql://"+ PropertiesLoader.prop.getProperty("url") + "/restoran_mujigae";
+    private static String username = PropertiesLoader.prop.getProperty("dbuser");
+    private static String password = PropertiesLoader.prop.getProperty("dbpassword");
 
     private static DbSQL db;
     private Connection con = null;

@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import restoranmujigae.app.controller.data.DataCtrl;
 import restoranmujigae.app.model.order.Meja;
+import restoranmujigae.app.controller.data.PropertiesLoader;
 
 public class Main extends Application {
 
@@ -31,6 +32,7 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
+        PropertiesLoader.initProperties();
         Map<String, Integer> map = new LinkedHashMap();
         List<Meja> listMeja = DataCtrl.getAllAvailableMeja();
         for (Meja meja : listMeja) {
