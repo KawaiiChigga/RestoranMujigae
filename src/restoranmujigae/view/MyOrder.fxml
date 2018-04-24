@@ -91,11 +91,20 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="checkout" layoutX="816.0" layoutY="545.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                        <Button fx:id="confirm" layoutX="819.0" layoutY="545.0" mnemonicParsing="false" onAction="#getConfirm" style="-fx-background-color: transparent;">
                            <graphic>
-                              <ImageView fitHeight="118.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="113.0" fitWidth="147.0">
                                  <image>
-                                    <Image url="@../res/icon/button-07.png" />
+                                    <Image url="@../res/icon/button-09.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="validate" layoutX="631.0" layoutY="545.0" mnemonicParsing="false" onAction="#getValidate" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="113.0" fitWidth="151.0" visible="false">
+                                 <image>
+                                    <Image url="@../res/icon/button-10.png" />
                                  </image>
                               </ImageView>
                            </graphic>
