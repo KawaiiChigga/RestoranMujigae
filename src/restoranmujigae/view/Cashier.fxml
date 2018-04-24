@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="905.0" prefWidth="1452.0" style="-fx-background-color: ef9920;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.CashierMenuCtrl">
+<VBox prefHeight="905.0" prefWidth="1452.0" style="-fx-background-color: ef9920;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.CashierMenuCtrl">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -73,62 +73,62 @@
                   <Font name="Open Sans Bold" size="82.0" />
                </font>
             </Text>
-            <Button fx:id="meja1" layoutX="218.0" layoutY="210.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 01">
+            <Button fx:id="meja1" layoutX="218.0" layoutY="210.0" mnemonicParsing="false" onAction="#getMeja1" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 01">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja5" layoutX="218.0" layoutY="397.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 05">
+            <Button fx:id="meja5" layoutX="218.0" layoutY="397.0" mnemonicParsing="false" onAction="#getMeja5" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 05">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja9" layoutX="218.0" layoutY="580.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 09">
+            <Button fx:id="meja9" layoutX="218.0" layoutY="580.0" mnemonicParsing="false" onAction="#getMeja9" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 09">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja2" layoutX="474.0" layoutY="210.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 02">
+            <Button fx:id="meja2" layoutX="474.0" layoutY="210.0" mnemonicParsing="false" onAction="#getMeja2" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 02">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja6" layoutX="474.0" layoutY="397.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 06">
+            <Button fx:id="meja6" layoutX="474.0" layoutY="397.0" mnemonicParsing="false" onAction="#getMeja6" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 06">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja10" layoutX="474.0" layoutY="580.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 10">
+            <Button fx:id="meja10" layoutX="474.0" layoutY="580.0" mnemonicParsing="false" onAction="#getMeja10" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 10">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja3" layoutX="718.0" layoutY="207.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 03">
+            <Button fx:id="meja3" layoutX="718.0" layoutY="207.0" mnemonicParsing="false" onAction="#getMeja3" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 03">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja7" layoutX="718.0" layoutY="394.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 07">
+            <Button fx:id="meja7" layoutX="718.0" layoutY="394.0" mnemonicParsing="false" onAction="#getMeja7" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 07">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja11" layoutX="718.0" layoutY="577.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 11">
+            <Button fx:id="meja11" layoutX="718.0" layoutY="577.0" mnemonicParsing="false" onAction="#getMeja11" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 11">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja4" layoutX="974.0" layoutY="207.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 04">
+            <Button fx:id="meja4" layoutX="974.0" layoutY="207.0" mnemonicParsing="false" onAction="#getMeja4" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 04">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja8" layoutX="974.0" layoutY="394.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 08">
+            <Button fx:id="meja8" layoutX="974.0" layoutY="394.0" mnemonicParsing="false" onAction="#getMeja8" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 08">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="meja12" layoutX="974.0" layoutY="577.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 12">
+            <Button fx:id="meja12" layoutX="974.0" layoutY="577.0" mnemonicParsing="false" onAction="#getMeja12" prefHeight="105.0" prefWidth="134.0" style="-fx-background-color: white;" text="MEJA 12">
                <font>
                   <Font size="25.0" />
                </font>
