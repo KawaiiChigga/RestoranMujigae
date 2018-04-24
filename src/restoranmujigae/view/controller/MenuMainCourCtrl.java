@@ -17,10 +17,11 @@ import javafx.scene.control.TextInputDialog;
 import restoranmujigae.app.controller.order.OrderCtrl;
 
 public class MenuMainCourCtrl extends MenuCtrl {
+
     public MenuMainCourCtrl() {
         super();
     }
-    
+
     //MAINCOURSE
     @FXML
     private void getEggs(ActionEvent event) throws IOException {
@@ -31,15 +32,14 @@ public class MenuMainCourCtrl extends MenuCtrl {
 
     @FXML
     private void getGrilled(ActionEvent event) throws IOException {
-        boolean finished = false;
         int qty = 1;
-        
-        while(!finished){
+        boolean finished = false;
+        while (!finished) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmation Dialog with Custom Actions");
             alert.setHeaderText("Look, a Confirmation Dialog with Custom Actions");
             alert.setContentText("Quantity : " + qty);
-            Label label = new Label("The exception stacktrace was:");
+
             ButtonType buttonTypeOne = new ButtonType("-");
             ButtonType buttonTypeTwo = new ButtonType("+");
             ButtonType buttonTypeOk = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
@@ -49,7 +49,11 @@ public class MenuMainCourCtrl extends MenuCtrl {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == buttonTypeOne) {
-                qty -= 1;
+                if (qty <= 1) {
+                    qty = 1;
+                } else {
+                    qty -= 1;
+                }
             } else if (result.get() == buttonTypeTwo) {
                 qty += 1;
             } else if (result.get() == buttonTypeOk) {
@@ -58,16 +62,16 @@ public class MenuMainCourCtrl extends MenuCtrl {
                 qty = 0;
                 finished = true;
             }
-            
+
         }
-        System.out.println("Jumlah order " + qty);
+        System.out.println("grilled");
     }
 
     @FXML
     private void getPene(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");
     }
- 
+
     @FXML
     private void getQue(ActionEvent event) throws IOException {
         System.out.println("Send Checkout");

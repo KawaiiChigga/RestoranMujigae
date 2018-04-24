@@ -7,21 +7,24 @@ package restoranmujigae.main;
 
 import java.util.ArrayList;
 import java.util.List;
+import restoranmujigae.app.controller.data.DataCtrl;
 import restoranmujigae.app.controller.order.OrderCtrl;
 import restoranmujigae.app.model.order.Pelayan;
 import restoranmujigae.app.controller.order.WaiterCtrl;
 import restoranmujigae.app.controller.transaction.CashierCtrl;
 import restoranmujigae.app.model.menu.Kategori;
 import restoranmujigae.app.model.menu.Menu;
+import restoranmujigae.app.model.order.Meja;
 import restoranmujigae.app.model.order.OrderMenuLine;
 import restoranmujigae.app.model.transaction.Cashier;
 
 public class Test {
 
     public Test() {
-        addWaiter();
-        addCashier();
-        addKategori();
+        addMeja();
+//        addWaiter();
+//        addCashier();
+//        addKategori();
 //        addMenu();
     }
 
@@ -35,31 +38,44 @@ public class Test {
         listWaiter.add(new Pelayan("Sujana", "1234"));
         listWaiter.add(new Pelayan("Sebastian", "1234"));
 
-        WaiterCtrl.createListWaiter(listWaiter);
+        for (Pelayan pelayan : listWaiter) {
+            DataCtrl.createWaiter(pelayan);
+        }
     }
-    
+
     public void addCashier() {
         List<Cashier> listCashier = new ArrayList();
         listCashier.add(new Cashier("Richard", true));
-        
+
         for (int i = 0; i < listCashier.size(); i++) {
             CashierCtrl.createCashier(listCashier.get(i).getNama(), true);
         }
     }
-    
+
     public void addKategori() {
         List<Kategori> listKategori = new ArrayList();
         listKategori.add(new Kategori(1, "Appetizer", true));
         listKategori.add(new Kategori(2, "Main Course", true));
         listKategori.add(new Kategori(3, "Drink", true));
         listKategori.add(new Kategori(4, "Dessert", true));
-        
+
         for (int i = 0; i < listKategori.size(); i++) {
-            OrderCtrl.createKategori(listKategori.get(i).getId(), listKategori.get(i).getNama(), true);
+            DataCtrl.createKategori(listKategori.get(i).getId(), listKategori.get(i).getNama(), true);
         }
     }
-    
-    public void addMenu(){
+
+    public void addMeja() {
+        List<Meja> listMeja = new ArrayList();
+        for (int i = 1; i <= 12; i++) {
+            listMeja.add(new Meja("MEJA" + String.format("%02d", i)));
+        }
+        
+        for (Meja meja : listMeja) {
+            DataCtrl.createMeja(meja);
+        }
+    }
+
+    public void addMenu() {
         List<Menu> listMenu = new ArrayList();
         listMenu.add(new Menu("Bacon Wrapped", 25000, 1, true, "Bacon, marry me!"));
         listMenu.add(new Menu("Caribbean Chicken Salad", 25000, 1, true, "This is not a pirates"));
@@ -98,7 +114,7 @@ public class Test {
         listMenu.add(new Menu("Short Cake", 25000, 4, true, "Short People must eat Short Cake"));
 
         for (int i = 0; i < listMenu.size(); i++) {
-            OrderCtrl.createMenu((i+1), listMenu.get(i).getNama(), listMenu.get(i).getHarga(), 
+            DataCtrl.createMenu((i + 1), listMenu.get(i).getNama(), listMenu.get(i).getHarga(),
                     null, listMenu.get(i).getId_kategori(), listMenu.get(i).getDeskripsi());
         }
     }

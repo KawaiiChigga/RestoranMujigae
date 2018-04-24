@@ -8,6 +8,7 @@ package restoranmujigae.view.controller;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import restoranmujigae.app.controller.order.OrderCtrl;
 
 public class MenuAppetizerCtrl extends MenuCtrl {
 
@@ -18,7 +19,7 @@ public class MenuAppetizerCtrl extends MenuCtrl {
     //APPETIZER
     @FXML
     private void getBacon(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Bacon").get(0));
     }
 
     @FXML
