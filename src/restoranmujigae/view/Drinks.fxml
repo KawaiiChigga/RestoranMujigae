@@ -231,7 +231,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="283.0" layoutY="705.0" prefHeight="127.0" prefWidth="211.0" style="-fx-wrap-text: true;" text="&quot;Fresh Juice, Fresh Face&quot;" textAlignment="CENTER" textFill="WHITE">
+                        <Label layoutX="289.0" layoutY="707.0" prefHeight="127.0" prefWidth="211.0" style="-fx-wrap-text: true;" text="&quot;Fresh Juice, Fresh Face&quot;" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -375,21 +375,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="btnCallWaiter" fx:id="callWaiter" graphicTextGap="0.0" layoutX="97.0" layoutY="141.0" mnemonicParsing="false" onAction="#getCallWaiters" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
-                     <font>
-                        <Font size="1.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <graphic>
-                        <ImageView fitHeight="91.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../res/icon/button2-04.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <Button id="btnCall" fx:id="myOrder" graphicTextGap="0.0" layoutX="98.0" layoutY="25.0" mnemonicParsing="false" onAction="#getMyOrder" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
                         <Font size="1.0" />
@@ -405,7 +390,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="80.0" layoutY="15.0" maxWidth="38.0" prefHeight="35.0" prefWidth="38.0" style="-fx-background-color: red; -fx-alignment: center; -fx-background-radius: 20; -fx-max-width: 35;" text="1" textFill="WHITE" />
                   <Button fx:id="desserts" layoutX="94.0" layoutY="610.0" mnemonicParsing="false" onAction="#getDesserts" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fitHeight="88.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">

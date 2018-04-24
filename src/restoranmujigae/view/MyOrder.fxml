@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.MenuOrderCtrl">
+<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.MenuOrderCtrl">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -69,11 +69,11 @@
                            </image>
                         </ImageView>
                         <Label layoutX="555.0" layoutY="359.0" text="Classic Ice Cream" textFill="WHITE" />
-                        <TableView layoutX="-26.0" layoutY="4.0" prefHeight="545.0" prefWidth="1000.0">
+                        <TableView fx:id="orderTable" layoutX="92.0" layoutY="116.0" prefHeight="401.0" prefWidth="882.0">
                           <columns>
-                            <TableColumn prefWidth="685.0" text="Name" />
-                            <TableColumn minWidth="0.0" prefWidth="156.66668701171875" text="Quantity" />
-                              <TableColumn prefWidth="159.33331298828125" text="Price" />
+                            <TableColumn fx:id="orderName" prefWidth="517.0" text="Name" />
+                            <TableColumn fx:id="orderPrice" prefWidth="214.0" text="Price" />
+                            <TableColumn fx:id="orderQty" minWidth="0.0" prefWidth="145.0" text="Quantity" />
                           </columns>
                         </TableView>
                         <Button id="btnCallWaiter" fx:id="start" graphicTextGap="0.0" layoutX="33.0" layoutY="27.0" mnemonicParsing="false" onAction="#getStart" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
@@ -91,9 +91,9 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="checkout" layoutX="796.0" layoutY="679.0" mnemonicParsing="false">
+                        <Button fx:id="checkout" layoutX="816.0" layoutY="545.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
                            <graphic>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="118.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../res/icon/button-07.png" />
                                  </image>
@@ -152,21 +152,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="btnCallWaiter" fx:id="callWaiter" graphicTextGap="0.0" layoutX="97.0" layoutY="141.0" mnemonicParsing="false" onAction="#getCallWaiters" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
-                     <font>
-                        <Font size="1.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <graphic>
-                        <ImageView fitHeight="91.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../res/icon/button2-04.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <Button id="btnCall" fx:id="myOrder" graphicTextGap="0.0" layoutX="98.0" layoutY="25.0" mnemonicParsing="false" onAction="#getMyOrder" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                      <font>
                         <Font size="1.0" />
@@ -182,7 +167,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="80.0" layoutY="15.0" maxWidth="38.0" prefHeight="35.0" prefWidth="38.0" style="-fx-background-color: red; -fx-alignment: center; -fx-background-radius: 20; -fx-max-width: 35;" text="1" textFill="WHITE" />
                   <Button fx:id="desserts" layoutX="94.0" layoutY="610.0" mnemonicParsing="false" onAction="#getDesserts" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fitHeight="88.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">

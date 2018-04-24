@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 import restoranmujigae.app.model.menu.Menu;
 
 public class OrderMenuLine {
-    private int id;
-    private int qty;
-    private double harga;
+    public int id;
+    public int qty;
+    public double harga;
     private int id_order;
     private int id_menu;
     private LocalDateTime created_at;
@@ -21,6 +21,13 @@ public class OrderMenuLine {
     private Menu menu;
 
     // Create OrderMenuLine
+    public OrderMenuLine(int id, double harga, int qty) {
+        this.id = id;
+        this.harga = harga;
+        this.qty = qty;
+    }
+
+// Create OrderMenuLine
     public OrderMenuLine(int qty, double harga, OrderMenu order, Menu menu) {
         this.qty = qty;
         this.harga = harga;
