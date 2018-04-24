@@ -24,36 +24,36 @@ public class MenuAppetizerCtrl extends MenuCtrl {
 
     @FXML
     private void getCari(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Caribbean").get(0));
     }
 
     @FXML
     private void getFeta(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Feta").get(0));
     }
 
     @FXML
     private void getWings(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Grilled Chicken Wings").get(0));
     }
 
     @FXML
     private void getSavory(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Savory").get(0));
     }
 
     @FXML
     private void getTurnip(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Turnip").get(0));
     }
 
     @FXML
     private void getTaco(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Taco").get(0));
     }
 
     @FXML
     private void getVegetable(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Vegetable").get(0));
     }
 }

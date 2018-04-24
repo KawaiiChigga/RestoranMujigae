@@ -96,13 +96,13 @@ public class Test {
         listMenu.add(new Menu("Spaghetti", 50000, 2, true, "Another bule' meal here"));
 
         listMenu.add(new Menu("Coke", 25000, 3, true, "Coke please!"));
-        listMenu.add(new Menu("Classic Ice Cream", 25000, 3, true, "Cute people drink disss"));
-        listMenu.add(new Menu("Cute Pink", 25000, 3, true, "BOLD MAN YO"));
-        listMenu.add(new Menu("Ice Coffee", 25000, 3, true, "Just a random juice"));
-        listMenu.add(new Menu("Juice (random)", 25000, 3, true, "Milkshake just for a kid"));
-        listMenu.add(new Menu("Choco Milkshake", 25000, 3, true, "Fresh Juice, Fresh Face"));
-        listMenu.add(new Menu("Orange Juice", 25000, 3, true, "Apple pen, pen pineapple pen, pen pineapple apple pen"));
-        listMenu.add(new Menu("Pineapple Pen", 25000, 3, true, "This glass is sexier than your girlfriend"));
+        listMenu.add(new Menu("Cute Pink", 25000, 3, true, "Cute people drink disss"));
+        listMenu.add(new Menu("Ice Coffee", 25000, 3, true, "BOLD MAN YO"));
+        listMenu.add(new Menu("Juice (random)", 25000, 3, true, "Just a random juice"));
+        listMenu.add(new Menu("Choco Milkshake", 25000, 3, true, "Milkshake just for a kid"));
+        listMenu.add(new Menu("Orange Juice", 25000, 3, true, "Fresh Juice, Fresh Face"));
+        listMenu.add(new Menu("Pineapple Pen", 25000, 3, true, "Apple pen, pen pineapple pen, pen pineapple apple pen"));
+        listMenu.add(new Menu("Sexy Smoothies", 25000, 3, true, "This glass is sexier than your girlfriend"));
 
         listMenu.add(new Menu("Banana Split", 25000, 4, true, "Dont see a man' eyes while you eating a banana"));
         listMenu.add(new Menu("Cake Berries", 25000, 4, true, "Cake won't make you fat, believe me"));

@@ -8,6 +8,7 @@ package restoranmujigae.view.controller;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import restoranmujigae.app.controller.order.OrderCtrl;
 
 public class MenuDessertCtrl extends MenuCtrl {
     public MenuDessertCtrl() {
@@ -16,41 +17,41 @@ public class MenuDessertCtrl extends MenuCtrl {
     
     @FXML
     private void getBanana(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Banana").get(0));
     }
 
     @FXML
     private void getCake(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Cake Berries").get(0));
     }
 
     @FXML
     private void getClassic(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Classic Ice Cream").get(0));
     }
 
     @FXML
     private void getFruit(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Fruit Salad").get(0));
     }
 
     @FXML
     private void getChoco(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Choco Cookies").get(0));
     }
 
     @FXML
     private void getOreo(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Oreo Cake").get(0));
     }
 
     @FXML
     private void getPan(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Pan - Cake").get(0));
     }
 
     @FXML
     private void getShortcake(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Short Cake").get(0));
     }
 }

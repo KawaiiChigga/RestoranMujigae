@@ -25,75 +25,42 @@ public class MenuMainCourCtrl extends MenuCtrl {
     //MAINCOURSE
     @FXML
     private void getEggs(ActionEvent event) throws IOException {
-        String nama = OrderCtrl.searchMenu("Eggs").get(0).getNama();
-        System.out.println(nama);
         orderMenu(OrderCtrl.searchMenu("Eggs").get(0));
+        
     }
 
     @FXML
     private void getGrilled(ActionEvent event) throws IOException {
-        int qty = 1;
-        boolean finished = false;
-        while (!finished) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmation Dialog with Custom Actions");
-            alert.setHeaderText("Look, a Confirmation Dialog with Custom Actions");
-            alert.setContentText("Quantity : " + qty);
-
-            ButtonType buttonTypeOne = new ButtonType("-");
-            ButtonType buttonTypeTwo = new ButtonType("+");
-            ButtonType buttonTypeOk = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-            ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeOk, buttonTypeCancel);
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == buttonTypeOne) {
-                if (qty <= 1) {
-                    qty = 1;
-                } else {
-                    qty -= 1;
-                }
-            } else if (result.get() == buttonTypeTwo) {
-                qty += 1;
-            } else if (result.get() == buttonTypeOk) {
-                finished = true;
-            } else if (result.get() == buttonTypeCancel) {
-                qty = 0;
-                finished = true;
-            }
-
-        }
-        System.out.println("grilled");
+        orderMenu(OrderCtrl.searchMenu("Grilled Chicken").get(0));
     }
 
     @FXML
     private void getPene(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Pene").get(0));
     }
 
     @FXML
     private void getQue(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Quesadilla").get(0));
     }
 
     @FXML
     private void getPulled(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Pulled Pork").get(0));
     }
 
     @FXML
     private void getSalmon(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Salmon Style").get(0));
     }
 
     @FXML
     private void getSch(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Schnitzle Tower").get(0));
     }
 
     @FXML
     private void getSpaghetti(ActionEvent event) throws IOException {
-        System.out.println("Send Checkout");
+        orderMenu(OrderCtrl.searchMenu("Pulled Pork").get(0));
     }
 }
