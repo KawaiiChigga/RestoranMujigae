@@ -66,7 +66,6 @@ public class MejaCheckoutCtrl {
         List<OrderMenuLine> cart = OrderCtrl.getCartByMeja(Main.ID_MEJA);
         data = FXCollections.observableArrayList();
         for (OrderMenuLine orderMenuLine : cart) {
-            System.out.println(orderMenuLine.getMenu().getNama());
             data.add(new Wrapper(
                     orderMenuLine.getId(), 
                     orderMenuLine.getMenu().getNama(), 
