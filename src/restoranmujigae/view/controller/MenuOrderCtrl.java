@@ -14,23 +14,28 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import restoranmujigae.app.model.order.OrderMenuLine;
 
 public class MenuOrderCtrl extends MenuCtrl {
-    @FXML private TableColumn orderName ;
-    @FXML private TableColumn orderPrice ;
-    @FXML private TableColumn orderQty;
-    @FXML private TableView<OrderMenuLine> orderTable = new TableView<>();
-    
-     private final ObservableList<OrderMenuLine> data
+
+    @FXML
+    private TableColumn orderName;
+    @FXML
+    private TableColumn orderPrice;
+    @FXML
+    private TableColumn orderQty;
+    @FXML
+    private TableView<OrderMenuLine> orderTable = new TableView<>();
+
+    private final ObservableList<OrderMenuLine> data
             = FXCollections.observableArrayList(
                     new OrderMenuLine(1, 5000, 5),
                     new OrderMenuLine(2, 12000, 4)
             );
-     
+
     public MenuOrderCtrl() {
         super();
     }
-    
+
     @FXML
-    private void initialize() throws Exception  {
+    private void initialize() throws Exception {
         orderName.setCellValueFactory(
                 new PropertyValueFactory<OrderMenuLine, String>("id"));
         orderPrice.setCellValueFactory(

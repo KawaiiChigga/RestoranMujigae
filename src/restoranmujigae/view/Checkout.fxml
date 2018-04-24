@@ -59,11 +59,11 @@
     </MenuBar>
       <AnchorPane prefHeight="244.0" prefWidth="386.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView layoutX="264.0" layoutY="53.0" prefHeight="478.0" prefWidth="860.0">
+            <TableView fx:id="checkoutTable" layoutX="264.0" layoutY="53.0" prefHeight="478.0" prefWidth="860.0">
                <columns>
-                  <TableColumn prefWidth="521.0" text="Name" />
-                  <TableColumn minWidth="0.0" prefWidth="169.0" text="Quantity" />
-                  <TableColumn prefWidth="172.0" text="Price" />
+                  <TableColumn fx:id="cashierName" prefWidth="521.0" text="Name" />
+                  <TableColumn fx:id="cashierQty" minWidth="0.0" prefWidth="169.0" text="Quantity" />
+                  <TableColumn fx:id="cashierPrice" prefWidth="172.0" text="Price" />
                </columns>
             </TableView>
             <Button fx:id="checkout" layoutX="908.0" layoutY="558.0" mnemonicParsing="false" onAction="#getCheckout" style="-fx-background-color: transparent;">
@@ -80,7 +80,7 @@
                   <Font name="Calibri Bold" size="34.0" />
                </font>
             </Text>
-            <TextField editable="false" layoutX="669.0" layoutY="566.0" prefHeight="41.0" prefWidth="219.0">
+            <TextField fx:id="totalPrice" editable="false" layoutX="669.0" layoutY="566.0" prefHeight="41.0" prefWidth="219.0">
                <font>
                   <Font size="22.0" />
                </font>

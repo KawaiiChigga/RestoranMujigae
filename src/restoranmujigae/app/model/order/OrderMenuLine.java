@@ -6,6 +6,7 @@
 package restoranmujigae.app.model.order;
 
 import java.time.LocalDateTime;
+import restoranmujigae.app.controller.order.OrderCtrl;
 import restoranmujigae.app.model.menu.Menu;
 
 public class OrderMenuLine {
@@ -112,7 +113,7 @@ public class OrderMenuLine {
     }
 
     public Menu getMenu() {
-        return menu;
+        return OrderCtrl.getMenu(id_menu);
     }
 
     public void setMenu(Menu menu) {
