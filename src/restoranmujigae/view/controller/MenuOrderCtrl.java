@@ -6,9 +6,12 @@
 package restoranmujigae.view.controller;
 
 import java.util.List;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,13 +29,10 @@ public class MenuOrderCtrl extends MenuCtrl {
     private TableColumn orderQty;
     @FXML
     private TableView<Wrapper> orderTable = new TableView<>();
+    @FXML
+    private Button validate;
 
     private ObservableList<Wrapper> data;
-//    private final ObservableList<OrderMenuLine> data
-//            = FXCollections.observableArrayList(
-//                    new OrderMenuLine(1, 5000, 5),
-//                    new OrderMenuLine(2, 12000, 4)
-//            );
 
     public MenuOrderCtrl() {
         super();
@@ -58,6 +58,17 @@ public class MenuOrderCtrl extends MenuCtrl {
             );
         }
         orderTable.setItems(data);
+//        orderTable.setItems(data);
+    }
+    
+    @FXML
+    private void getConfirm(ActionEvent event) throws IOException {
+        
+    }
+    
+    @FXML
+    private void getValidate(ActionEvent event) throws IOException {
+        
     }
     
     public class Wrapper {
