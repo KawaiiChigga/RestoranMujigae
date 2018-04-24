@@ -6,11 +6,16 @@
 package restoranmujigae.app.controller.data;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import restoranmujigae.app.database.DbSQL;
 import restoranmujigae.app.model.order.Meja;
+import restoranmujigae.app.model.order.OrderMenuLine;
 import restoranmujigae.app.model.order.Pelayan;
 
 public class DataCtrl {
@@ -33,6 +38,29 @@ public class DataCtrl {
             e.printStackTrace();
         }
         return status;
+    }
+    
+    public static List<Meja> getAllAvailableMeja() {
+        List<Meja> hasil = new ArrayList();
+        String sql;
+        Statement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            stm = db.getCon().createStatement();
+            sql = "SELECT * FROM meja WHERE status = 1";
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                hasil.add(new Meja(
+                        rs.getInt("id"),
+                        rs.getString("noMeja"),
+                        rs.getBoolean("status"))
+                );
+            }
+            stm.close();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return hasil;
     }
     
     public static boolean createMenu(int id, String nama, double harga, String img_url, int id_kat, String deskripsi) {

@@ -26,12 +26,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import restoranmujigae.app.controller.order.OrderCtrl;
 import restoranmujigae.app.model.menu.Menu;
+import restoranmujigae.app.model.order.OrderMenu;
+import restoranmujigae.main.Main;
 
 public class MenuCtrl {
 
     static int qty;
-    
+
     protected void orderMenu(Menu menu) {
         qty = 1;
         TextInputDialog dialog = new TextInputDialog("" + qty);
@@ -48,7 +51,7 @@ public class MenuCtrl {
         Button min = new Button("-");
         TextField field_qty = new TextField("" + qty);
         Button plus = new Button("+");
-        
+
         min.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -63,7 +66,7 @@ public class MenuCtrl {
                 dialog.getDialogPane().setContent(grid);
             }
         });
-        
+
         plus.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -74,22 +77,23 @@ public class MenuCtrl {
                 dialog.getDialogPane().setContent(grid);
             }
         });
-        
+
         grid.add(min, 0, 1);
         grid.add(field_qty, 1, 1);
         grid.add(plus, 2, 1);
 
         dialog.getDialogPane().setContent(grid);
 
-        // Traditional way to get the response value.
         Optional<String> result = dialog.showAndWait();
-
-//        boolean finished = false;
-
-        
-
         if (result.isPresent()) {
-//            System.out.println("Egg Quantity: " + result.get());
+            OrderMenu om = null;
+            do {
+                om = OrderCtrl.getActiveOrder(Main.ID_MEJA);
+                if (om == null) {
+                    OrderCtrl.createOrderMenu(Main.ID_MEJA);
+                }
+            } while (om == null);
+            OrderCtrl.createOrderMenuLine(qty, menu.getHarga(), om.getId(), menu.getId());
         }
     }
 

@@ -168,7 +168,7 @@ public class OrderCtrl {
         return hasil;
     }
 
-    public static boolean createOrderMenu(int id_meja, Pelayan p) {
+    public static boolean createOrderMenu(int id_meja) {
         boolean status = false;
         LocalDateTime ldt = LocalDateTime.now();
         String sql;
@@ -176,13 +176,12 @@ public class OrderCtrl {
         OrderMenu om = null;
         try {
             DbSQL db = DbSQL.getInstance();
-            sql = "insert into order_menu (status,id_meja,id_waiter,created_at,is_deleted) values (?,?,?,?,?)";
+            sql = "insert into order_menu (status,id_meja,created_at,is_deleted) values (?,?,?,?)";
             stm = db.getCon().prepareStatement(sql);
             stm.setInt(1, 1);
             stm.setInt(2, id_meja);
-            stm.setInt(3, p.getId());
-            stm.setTimestamp(4, Timestamp.valueOf(ldt));
-            stm.setBoolean(5, false);
+            stm.setTimestamp(3, Timestamp.valueOf(ldt));
+            stm.setBoolean(4, false);
             int hasil = stm.executeUpdate();
             if (hasil > 0) {
                 status = true;
@@ -194,7 +193,7 @@ public class OrderCtrl {
         return status;
     }
 
-    public static boolean createOrderMenuLine(int qty, int harga, int id_order, int id_menu) {
+    public static boolean createOrderMenuLine(int qty, double harga, int id_order, int id_menu) {
         boolean status = false;
         LocalDateTime ldt = LocalDateTime.now();
         String sql;
@@ -204,7 +203,7 @@ public class OrderCtrl {
             sql = "insert into order_menu_line (qty,harga,id_order,id_menu,created_at) values (?,?,?,?,?)";
             stm = db.getCon().prepareStatement(sql);
             stm.setInt(1, qty);
-            stm.setInt(2, harga);
+            stm.setDouble(2, harga);
             stm.setInt(3, id_order);
             stm.setInt(4, id_menu);
             stm.setTimestamp(5, Timestamp.valueOf(ldt));

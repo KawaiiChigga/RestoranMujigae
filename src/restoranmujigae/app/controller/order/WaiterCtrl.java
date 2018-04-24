@@ -94,47 +94,4 @@ public class WaiterCtrl {
         return w;
     }
 
-    public static boolean createWaiter(Pelayan pelayan) {
-        String sql;
-        Statement stm;
-        try {
-            DbSQL db = DbSQL.getInstance();
-            stm = db.getCon().createStatement();
-            sql = "INSERT INTO waiter (nama, pin) VALUES ("
-                    + "'" + pelayan.getNama() + "', "
-                    + "'" + pelayan.getPin() + "')";
-            stm.executeUpdate(sql);
-            db.logOff();
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean createListWaiter(List<Pelayan> list) {
-        String sql;
-        Statement stm;
-        try {
-            DbSQL db = DbSQL.getInstance();
-            stm = db.getCon().createStatement();
-            for (Pelayan pelayan : list) {
-                sql = "INSERT INTO waiter (nama, pin) VALUES ("
-                        + "'" + pelayan.getNama() + "', "
-                        + "'" + pelayan.getPin() + "')";
-
-                stm.executeUpdate(sql);
-            }
-            db.logOff();
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            return false;
-        }
-        return true;
-    }
-
-    public static void confirmOrder() {
-
-    }
-
 }
