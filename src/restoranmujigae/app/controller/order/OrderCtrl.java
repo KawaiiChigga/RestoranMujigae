@@ -117,7 +117,7 @@ public class OrderCtrl {
             sql = "SELECT ol.* "
                     + "FROM order_menu o JOIN order_menu_line ol ON o.id = ol.id_order "
                     + "WHERE o.id_meja = " + id_meja + " AND "
-                    + "o.status = 1";
+                    + "o.status = 1 AND ol.is_deleted = 0";
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {
                 LocalDateTime created_at = LocalDateTime.parse(rs.getTimestamp("created_at").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
@@ -129,7 +129,8 @@ public class OrderCtrl {
                                 rs.getInt("id_order"),
                                 rs.getInt("id_menu"),
                                 created_at,
-                                rs.getBoolean("is_deleted")
+                                rs.getBoolean("is_deleted"),
+                                rs.getBoolean("status")
                         )
                 );
             }
@@ -241,6 +242,54 @@ public class OrderCtrl {
             e.printStackTrace();
         }
         return status;
+    }
+    
+    public static OrderMenuLine getOrderMenuLine(int id){
+        OrderMenuLine om = null;
+        String sql;
+        Statement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            stm = db.getCon().createStatement();
+            sql = "SELECT * FROM order_menu_line WHERE id = " + id;
+            ResultSet rs = stm.executeQuery(sql);
+            if (rs.next()) {
+                om = new OrderMenuLine(
+                        rs.getInt("id"),
+                        rs.getInt("qty"),
+                        rs.getDouble("harga"),
+                        rs.getInt("id_order"),
+                        rs.getInt("id_menu"),
+                        rs.getBoolean("is_deleted"),
+                        rs.getBoolean("status")
+                );
+            }
+            stm.close();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return om;
+    }
+    
+    public static boolean callWaiter(int id, int status)
+    {
+        boolean result = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "update meja set callwaiter = "+status+" where id = "+id;
+            stm = db.getCon().prepareStatement(sql);
+            if (stm.executeUpdate() > 0) {
+                result = true;
+                System.out.println("sukses");
+            } else {
+                System.out.println("gagal");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
 }
