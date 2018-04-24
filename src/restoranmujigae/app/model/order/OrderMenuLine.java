@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 import restoranmujigae.app.model.menu.Menu;
 
 public class OrderMenuLine {
-    public int id;
-    public int qty;
-    public double harga;
+    private int id;
+    private int qty;
+    private double harga;
     private int id_order;
     private int id_menu;
     private LocalDateTime created_at;
@@ -21,13 +21,6 @@ public class OrderMenuLine {
     private Menu menu;
 
     // Create OrderMenuLine
-    public OrderMenuLine(int id, double harga, int qty) {
-        this.id = id;
-        this.harga = harga;
-        this.qty = qty;
-    }
-
-// Create OrderMenuLine
     public OrderMenuLine(int qty, double harga, OrderMenu order, Menu menu) {
         this.qty = qty;
         this.harga = harga;
@@ -44,6 +37,24 @@ public class OrderMenuLine {
         this.id_menu = id_menu;
         this.created_at = created_at;
         this.is_deleted = is_deleted;
+        this.status = status;
+    }
+    
+    public OrderMenuLine(int id, int qty, double harga, int id_order, int id_menu, boolean is_deleted, boolean status) {
+        this.id = id;
+        this.qty = qty;
+        this.harga = harga;
+        this.id_order = id_order;
+        this.id_menu = id_menu;
+        this.is_deleted = is_deleted;
+        this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
         this.status = status;
     }
     
@@ -117,14 +128,6 @@ public class OrderMenuLine {
 
     public void setMenu(Menu menu) {
         this.menu = menu;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
     
     
