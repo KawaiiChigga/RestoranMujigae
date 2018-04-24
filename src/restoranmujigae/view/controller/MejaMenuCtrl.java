@@ -26,6 +26,20 @@ import javafx.stage.Stage;
 public class MejaMenuCtrl {
     
     @FXML
+    private void getStart(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Start.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(true);
+        stage.setResizable(true);
+        stage.setMinHeight(stage.getHeight());
+        stage.setMinWidth(stage.getWidth());
+        stage.show();
+        stage.setFullScreen(true);
+    }
+    
+    @FXML
     protected void getAppetizer(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Appetizer.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -54,6 +68,16 @@ public class MejaMenuCtrl {
     
     @FXML
     protected void getCheckout(ActionEvent event) throws IOException {
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Checkout.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("MUJIGAE");
+        stage.setMaximized(true);
+        stage.setResizable(false);
+        stage.setFullScreen(true);
+        stage.show();
+        /* WOI INI SALAH GLENN!!!!!!!
         System.out.println("Send Checkout");
         List<String> choices = new ArrayList<>();
         choices.add("Waiter 1");
@@ -99,5 +123,6 @@ public class MejaMenuCtrl {
         if (result.isPresent()) {
             System.out.println("PIN: " + password.getText());
         }
+        */
     }
 }
