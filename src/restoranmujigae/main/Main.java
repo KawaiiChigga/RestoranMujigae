@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import restoranmujigae.app.controller.data.DataCtrl;
@@ -57,6 +58,7 @@ public class Main extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
+        primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         primaryStage.show();
     }
 

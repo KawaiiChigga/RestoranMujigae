@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="905.0" prefWidth="1452.0" style="-fx-background-color: ef9920;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.CallMenuCtrl">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <AnchorPane prefHeight="244.0" prefWidth="386.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Text fill="#2f241e" layoutX="323.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALLING WAITER" textAlignment="CENTER">
+               <font>
+                  <Font name="Open Sans Bold" size="82.0" />
+               </font>
+            </Text>
+            <Button fx:id="cancel" layoutX="620.0" layoutY="531.0" mnemonicParsing="false" onAction="#getCancel" prefHeight="70.0" prefWidth="134.0" style="-fx-background-color: white;" text="Cancel">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="359.0" fitWidth="702.0" layoutX="338.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/icon/call.gif" />
+               </image>
+            </ImageView>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </AnchorPane>
+  </children>
+</VBox>

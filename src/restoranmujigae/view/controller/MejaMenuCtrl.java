@@ -55,7 +55,7 @@ public class MejaMenuCtrl {
     
     @FXML
     protected void getCallWaiters(ActionEvent event) throws IOException {
-        /*Parent root = FXMLLoader.load(getClass().getResource("Waiters.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CallWaiter.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("MUJIGAE");
@@ -64,8 +64,7 @@ public class MejaMenuCtrl {
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
-        stage.setFullScreen(true);*/
-        System.out.println("Send CallWaiter");
+        stage.setFullScreen(true);
     }
     
     @FXML
