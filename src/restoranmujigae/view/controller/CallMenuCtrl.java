@@ -22,8 +22,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import restoranmujigae.app.controller.order.OrderCtrl;
+import restoranmujigae.main.Main;
 
-public class CallMenuCtrl extends MenuCtrl{
+public class CallMenuCtrl extends MejaMenuCtrl {
     
     public CallMenuCtrl() {
         super();
@@ -31,12 +33,12 @@ public class CallMenuCtrl extends MenuCtrl{
     
     @FXML
     private void initialize(){
-        //kasih notif ke database disini plis//
+        OrderCtrl.callWaiter(Main.ID_MEJA, 1);
     }
     
     @FXML
     protected void getCancel(ActionEvent event) throws IOException {
-        //disable notif plis//
+        OrderCtrl.callWaiter(Main.ID_MEJA, 0);
         getStart(event);
     }
 }

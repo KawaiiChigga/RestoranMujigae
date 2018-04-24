@@ -66,7 +66,7 @@
                   <TableColumn fx:id="cashierPrice" prefWidth="172.0" text="Price" />
                </columns>
             </TableView>
-            <Button fx:id="checkout" layoutX="908.0" layoutY="558.0" mnemonicParsing="false" onAction="#getCheckout" style="-fx-background-color: transparent;">
+            <Button fx:id="checkout" layoutX="908.0" layoutY="558.0" mnemonicParsing="false" onAction="#checkoutMeja" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>

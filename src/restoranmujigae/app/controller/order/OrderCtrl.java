@@ -312,5 +312,26 @@ public class OrderCtrl {
         }
         return result;
     }
+    
+    public static boolean callCheckout(int id, int status)
+    {
+        boolean result = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "update meja set callcheckout = "+status+" where id = "+id;
+            stm = db.getCon().prepareStatement(sql);
+            if (stm.executeUpdate() > 0) {
+                result = true;
+                System.out.println("sukses");
+            } else {
+                System.out.println("gagal");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 }

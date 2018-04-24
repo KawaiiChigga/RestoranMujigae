@@ -28,7 +28,7 @@ import restoranmujigae.app.model.order.Pelayan;
 public class MejaMenuCtrl {
     
     @FXML
-    private void getStart(ActionEvent event) throws IOException {
+    protected void getStart(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Start.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));

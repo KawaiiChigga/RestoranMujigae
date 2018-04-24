@@ -54,7 +54,8 @@ public class DataCtrl {
                         rs.getInt("id"),
                         rs.getString("noMeja"),
                         rs.getBoolean("status"),
-                        rs.getBoolean("callwaiter"))
+                        rs.getBoolean("callwaiter"),
+                        rs.getBoolean("callcheckout"))
                 );
             }
             stm.close();
@@ -62,6 +63,31 @@ public class DataCtrl {
             System.out.println(ex);
         }
         return hasil;
+    }
+    
+    public static Meja getMejaStatus(int id_meja) {
+        Meja meja = null;
+        String sql;
+        Statement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            stm = db.getCon().createStatement();
+            sql = "SELECT * FROM meja WHERE id = " + id_meja;
+            ResultSet rs = stm.executeQuery(sql);
+            if (rs.next()) {
+                meja = new Meja(
+                        rs.getInt("id"),
+                        rs.getString("noMeja"),
+                        rs.getBoolean("status"),
+                        rs.getBoolean("callwaiter"),
+                        rs.getBoolean("callcheckout")
+                );
+            }
+            stm.close();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return meja;
     }
     
     public static boolean createMenu(int id, String nama, double harga, String img_url, int id_kat, String deskripsi) {

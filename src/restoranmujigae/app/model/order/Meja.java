@@ -10,6 +10,7 @@ public class Meja {
     private String noMeja;
     private boolean status;
     private boolean callwaiter;
+    private boolean callcheckout;
 
     // Create Meja
     public Meja(String noMeja) {
@@ -17,11 +18,12 @@ public class Meja {
     }
 
     // Get Meja
-    public Meja(int id, String noMeja, boolean status, boolean callwaiter) {
+    public Meja(int id, String noMeja, boolean status, boolean callwaiter, boolean callcheckout) {
         this.id = id;
         this.noMeja = noMeja;
         this.status = status;
         this.callwaiter = callwaiter;
+        this.callcheckout = callcheckout;
     }
     
     public int getId() {
@@ -54,6 +56,14 @@ public class Meja {
 
     public void setCallwaiter(boolean callwaiter) {
         this.callwaiter = callwaiter;
+    }
+
+    public boolean isCallcheckout() {
+        return callcheckout;
+    }
+
+    public void setCallcheckout(boolean callcheckout) {
+        this.callcheckout = callcheckout;
     }
     
 }

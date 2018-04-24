@@ -18,6 +18,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -33,7 +34,7 @@ import restoranmujigae.app.model.order.OrderMenuLine;
 import restoranmujigae.app.model.menu.Menu;
 import restoranmujigae.main.Main;
 
-public class MejaCheckoutCtrl {
+public class MejaCheckoutCtrl extends MejaMenuCtrl {
 
     @FXML
     private TableColumn cashierName;
@@ -67,8 +68,8 @@ public class MejaCheckoutCtrl {
         data = FXCollections.observableArrayList();
         for (OrderMenuLine orderMenuLine : cart) {
             data.add(new Wrapper(
-                    orderMenuLine.getId(), 
-                    orderMenuLine.getMenu().getNama(), 
+                    orderMenuLine.getId(),
+                    orderMenuLine.getMenu().getNama(),
                     orderMenuLine.getHarga(),
                     orderMenuLine.getQty())
             );
@@ -76,34 +77,28 @@ public class MejaCheckoutCtrl {
         }
 //
         checkoutTable.setItems(data);
-        
+
         totalPrice.setText(total + "");
     }
 
     public MejaCheckoutCtrl() {
-
+        super();
     }
 
     @FXML
-    protected void getStart(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Start.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
-        stage.setMinHeight(stage.getHeight());
-        stage.setMinWidth(stage.getWidth());
-        stage.show();
-        stage.setFullScreen(true);
-    }
+    protected void checkoutMeja(ActionEvent event) throws IOException {
+        OrderCtrl.callCheckout(Main.ID_MEJA, 1);
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Thank you!");
+        alert.setContentText("Please wait! Your order are being prepared");
 
-    @FXML
-    protected void getCheckout(ActionEvent event) throws IOException {
-
+        alert.showAndWait();
     }
 
     public class Wrapper {
+
         private int id_orderline;
         private String nama;
         private double price;
@@ -147,8 +142,7 @@ public class MejaCheckoutCtrl {
         public void setQty(int qty) {
             this.qty = qty;
         }
-        
-        
+
     }
 
 }

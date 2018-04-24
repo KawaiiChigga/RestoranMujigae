@@ -174,6 +174,8 @@ public class MenuOrderCtrl extends MenuCtrl {
 
     @FXML
     private void getValidate(ActionEvent event) throws IOException {
+        OrderCtrl.callWaiter(Main.ID_MEJA, 0);
+        
         List<String> choices = new ArrayList<>();
         List<Pelayan> listPelayan = WaiterCtrl.getAllWaiter();
         for (Pelayan pelayan : listPelayan) {

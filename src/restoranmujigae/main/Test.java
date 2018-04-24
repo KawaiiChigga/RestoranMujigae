@@ -19,27 +19,17 @@ import restoranmujigae.app.model.order.OrderMenuLine;
 import restoranmujigae.app.model.transaction.Cashier;
 
 public class Test {
-//
-//    public Test() {
-//        addMeja();
-//        addWaiter();
-//        addCashier();
-//        addKategori();
-//        addMenu();
-//    }
+
+    public Test() {
+        addMeja();
+        addWaiter();
+        addCashier();
+        addKategori();
+        addMenu();
+    }
 
     public static void main(String[] args) {
-//        new Test();
-//         List<OrderMenuLine> ao = OrderCtrl.getCartByMeja(2);
-//         for (OrderMenuLine orderMenuLine : ao) {
-//             System.out.println(orderMenuLine.getHarga());
-//        }
-
-//        OrderMenuLine oml = OrderCtrl.getOrderMenuLine(1);
-//        System.out.println(oml.getHarga());
-
-          OrderCtrl.callWaiter(1,1);
-         
+        new Test();
     }
 
     public void addWaiter() {

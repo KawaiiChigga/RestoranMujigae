@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2018 at 05:34 AM
+-- Generation Time: Apr 24, 2018 at 07:57 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -57,7 +57,9 @@ CREATE TABLE `kategori` (
 CREATE TABLE `meja` (
   `id` int(11) NOT NULL,
   `noMeja` varchar(25) NOT NULL,
-  `status` tinyint(1) DEFAULT '1'
+  `status` tinyint(1) DEFAULT '1',
+  `callwaiter` tinyint(1) NOT NULL DEFAULT '0',
+  `callcheckout` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -72,7 +74,8 @@ CREATE TABLE `menu` (
   `harga` decimal(10,0) NOT NULL,
   `img_url` varchar(256) DEFAULT NULL,
   `id_kategori` int(11) NOT NULL,
-  `status` tinyint(1) DEFAULT '1'
+  `status` tinyint(1) DEFAULT '1',
+  `deskripsi` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -85,7 +88,7 @@ CREATE TABLE `order_menu` (
   `id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `id_meja` int(11) NOT NULL,
-  `id_waiter` int(11) NOT NULL,
+  `id_waiter` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `is_deleted` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -103,7 +106,8 @@ CREATE TABLE `order_menu_line` (
   `id_order` int(11) NOT NULL,
   `id_menu` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `is_deleted` tinyint(1) DEFAULT '0'
+  `is_deleted` tinyint(1) DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -230,7 +234,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `waiter`
 --
 ALTER TABLE `waiter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
