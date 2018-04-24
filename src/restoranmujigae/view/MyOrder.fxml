@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.MenuOrderCtrl">
+<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.MenuOrderCtrl">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -91,7 +91,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="confirm" layoutX="819.0" layoutY="545.0" mnemonicParsing="false" onAction="#getConfirm" style="-fx-background-color: transparent;">
+                        <Button fx:id="confirm" layoutX="819.0" layoutY="545.0" mnemonicParsing="false" onAction="#getConfirmOrder" style="-fx-background-color: transparent;">
                            <graphic>
                               <ImageView fitHeight="113.0" fitWidth="147.0">
                                  <image>
@@ -100,9 +100,9 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="validate" layoutX="631.0" layoutY="545.0" mnemonicParsing="false" onAction="#getValidate" style="-fx-background-color: transparent;">
+                        <Button fx:id="validate" layoutX="631.0" layoutY="545.0" mnemonicParsing="false" onAction="#getValidate" style="-fx-background-color: transparent;" visible="false">
                            <graphic>
-                              <ImageView fitHeight="113.0" fitWidth="151.0" visible="false">
+                              <ImageView fitHeight="113.0" fitWidth="151.0">
                                  <image>
                                     <Image url="@../res/icon/button-10.png" />
                                  </image>

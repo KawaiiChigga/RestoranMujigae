@@ -78,50 +78,6 @@ public class MejaMenuCtrl {
         stage.setResizable(false);
         stage.setFullScreen(true);
         stage.show();
-        /* WOI INI SALAH GLENN!!!!!!!
-        System.out.println("Send Checkout");
-        List<String> choices = new ArrayList<>();
-        List<Pelayan> listPelayan = WaiterCtrl.getAllWaiter();
-        for (Pelayan pelayan : listPelayan) {
-            choices.add(pelayan.getNama());
-        }
-
-        ChoiceDialog<String> dialog2 = new ChoiceDialog<>(listPelayan.get(0).getNama(), choices);
-        dialog2.setTitle("Checkout Bill");
-        dialog2.setHeaderText("Waiter");
-        dialog2.setContentText("Choose your waiter: ");
-
-        Optional<String> result2 = dialog2.showAndWait();
-        if (result2.isPresent()) {
-            System.out.println("Your choice: " + result2.get());
-        }
-
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setGraphic(null);
-        dialog.setTitle("Checkout Bill");
-        dialog.setHeaderText("By Waiter");
-
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(20, 150, 10, 10));
-
-        PasswordField password = new PasswordField();
-        password.setPromptText("Password");
-
-        grid.add(new Label("PIN:"), 0, 1);
-        grid.add(password, 1, 1);
-
-        dialog.getDialogPane().setContent(grid);
         
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()) {
-            if (WaiterCtrl.loginPelayan(result2.get(), password.getText())){
-                System.out.println("Login berhasil");
-            } else {
-                System.out.println("Bohong!");
-            }
-        }
-        */
     }
 }

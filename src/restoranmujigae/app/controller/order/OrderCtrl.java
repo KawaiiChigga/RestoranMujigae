@@ -219,6 +219,27 @@ public class OrderCtrl {
         return status;
     }
 
+    public static boolean updateOrderMenuLineStatus(int id_meja) {
+        boolean status = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "update meja m join order_menu o on m.id = o.id_meja join order_menu_line om on "
+                    + "o.id = om.id_order set om.status = 1 where m.id = ? and o.status = 1 and "
+                    + "om.is_deleted = 0";
+            stm = db.getCon().prepareStatement(sql);
+            stm.setInt(1, id_meja);
+
+            if (stm.executeUpdate() > 0) {
+                status = true;
+            } 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+    
     public static boolean updateOrderMenuLine(int id_menu_line, boolean delete, int qty) {
         boolean status = false;
         String sql;
@@ -229,7 +250,7 @@ public class OrderCtrl {
             stm = db.getCon().prepareStatement(sql);
             stm.setInt(1, qty);
             stm.setBoolean(2, delete);
-            stm.setInt(3, qty);
+            stm.setInt(3, id_menu_line);
 
             if (stm.executeUpdate() > 0) {
                 status = true;
