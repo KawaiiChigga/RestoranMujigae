@@ -11,11 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
+import restoranmujigae.app.controller.data.PropertiesLoader;
 
 public class MainCashier extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        PropertiesLoader.initProperties();
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Cashier.fxml"));
         primaryStage.setTitle("MUJIGAE CASHIER");
         primaryStage.setMaximized(false);
@@ -30,5 +32,4 @@ public class MainCashier extends Application {
         launch(args);
     }
 
-    
 }

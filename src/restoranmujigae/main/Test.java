@@ -8,6 +8,7 @@ package restoranmujigae.main;
 import java.util.ArrayList;
 import java.util.List;
 import restoranmujigae.app.controller.data.DataCtrl;
+import restoranmujigae.app.controller.data.PropertiesLoader;
 import restoranmujigae.app.controller.order.OrderCtrl;
 import restoranmujigae.app.model.order.Pelayan;
 import restoranmujigae.app.controller.order.WaiterCtrl;
@@ -29,6 +30,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
+        PropertiesLoader.initProperties();
         new Test();
     }
 
@@ -69,7 +71,7 @@ public class Test {
         for (int i = 1; i <= 12; i++) {
             listMeja.add(new Meja("MEJA" + String.format("%02d", i)));
         }
-        
+
         for (Meja meja : listMeja) {
             DataCtrl.createMeja(meja);
         }
