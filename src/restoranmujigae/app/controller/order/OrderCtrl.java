@@ -174,7 +174,6 @@ public class OrderCtrl {
         LocalDateTime ldt = LocalDateTime.now();
         String sql;
         PreparedStatement stm;
-        OrderMenu om = null;
         try {
             DbSQL db = DbSQL.getInstance();
             sql = "insert into order_menu (status,id_meja,created_at,is_deleted) values (?,?,?,?)";
