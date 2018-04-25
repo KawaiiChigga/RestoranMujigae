@@ -291,6 +291,28 @@ public class OrderCtrl {
         return om;
     }
     
+     public static boolean updateOrderMenuStatus(int id_meja){
+        boolean status = false;
+        String sql;
+        PreparedStatement stm;
+        try {
+            DbSQL db = DbSQL.getInstance();
+            sql = "update order_menu set status = 0 where id_meja = " + id_meja;
+            stm = db.getCon().prepareStatement(sql);
+
+            if (stm.executeUpdate() > 0) {
+                status = true;
+                System.out.println("sukses");
+            } else {
+                System.out.println("gagal");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+    
     public static boolean callWaiter(int id, int status)
     {
         boolean result = false;

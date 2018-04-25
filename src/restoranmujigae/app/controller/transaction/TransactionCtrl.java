@@ -25,18 +25,17 @@ import restoranmujigae.app.model.order.OrderMenuLine;
  */
 public class TransactionCtrl {
     
-    public static boolean createTransaction(int id_meja, int id_order, int id_cashier)
+    public static boolean createTransaction(int id_order, int id_cashier)
     {
         boolean status = false;
         String sql;
         PreparedStatement stm;
         try {
             DbSQL db = DbSQL.getInstance();
-            sql = "insert into transaction (id_meja,id_order,id_cashier) values (?,?,?)";
+            sql = "insert into transaction (id_order,id_cashier) values (?,?)";
             stm = db.getCon().prepareStatement(sql);
-            stm.setInt(1, id_meja);
-            stm.setInt(2, id_order);
-            stm.setInt(3, id_cashier);
+            stm.setInt(1, id_order);
+            stm.setInt(2, id_cashier);
             int hasil = stm.executeUpdate();
             if (hasil > 0) {
                 status = true;

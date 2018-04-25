@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.CashierMenuCtrl">
+<VBox prefHeight="905.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restoranmujigae.view.controller.CashierCheckoutCtrl">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -85,7 +85,7 @@
                   <Font size="22.0" />
                </font>
             </TextField>
-            <Button fx:id="cashier" graphicTextGap="0.0" layoutX="96.0" layoutY="39.0" mnemonicParsing="false" onAction="#getCashier" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+            <Button fx:id="cashier" graphicTextGap="0.0" layoutX="96.0" layoutY="39.0" mnemonicParsing="false" onAction="#btnBack" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -105,11 +105,6 @@
                   <Font name="Calibri Bold" size="34.0" />
                </font>
             </Text>
-            <TextField fx:id="tableNumber" editable="false" layoutX="850.0" layoutY="4.0" prefHeight="41.0" prefWidth="63.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </TextField>
          </children>
          <VBox.margin>
             <Insets />
