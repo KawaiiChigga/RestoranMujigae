@@ -15,9 +15,13 @@ import restoranmujigae.app.controller.data.PropertiesLoader;
 
 public class MainCashier extends Application {
 
+    public static int ID_CASHIER;
+    public static int ID_MEJA;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         PropertiesLoader.initProperties();
+        ID_CASHIER = 1;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Cashier.fxml"));
         primaryStage.setTitle("MUJIGAE CASHIER");
         primaryStage.setMaximized(false);

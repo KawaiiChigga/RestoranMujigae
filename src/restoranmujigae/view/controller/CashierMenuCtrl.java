@@ -62,7 +62,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja1(ActionEvent event) throws IOException {
-        System.out.println("MEJAAAAAAAAAAAAAAAAAAAAAAAAAAA 1");
+        Main.ID_MEJA = 1;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -76,6 +76,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja2(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 2;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -90,6 +91,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja3(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 3;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -104,6 +106,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja4(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 4;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -118,6 +121,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja5(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 5;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -132,6 +136,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja6(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 6;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -146,6 +151,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja7(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 7;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -160,6 +166,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja8(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 8;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -174,6 +181,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja9(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 9;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -188,6 +196,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja10(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 10;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -202,6 +211,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja11(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 11;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -216,6 +226,7 @@ public class CashierMenuCtrl {
 
     @FXML
     private void getMeja12(ActionEvent event) throws IOException {
+        Main.ID_MEJA = 12;
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -226,31 +237,6 @@ public class CashierMenuCtrl {
         stage.setMinWidth(stage.getWidth());
         stage.show();
         stage.setFullScreen(true);
-    }
-    @FXML
-    private void getCashier(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Cashier.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
-        stage.setMinHeight(stage.getHeight());
-        stage.setMinWidth(stage.getWidth());
-        stage.show();
-        stage.setFullScreen(true);
-    }
-    
-      @FXML
-    private void checkoutMeja(ActionEvent event) throws IOException {
-//       OrderCtrl.callCheckout(Main.ID_MEJA, 1);
-        
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Thank you!");
-        alert.setContentText("Please wait! Your order are being prepared");
-
-        alert.showAndWait();
     }
 
     @FXML
