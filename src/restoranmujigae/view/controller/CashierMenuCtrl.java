@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -35,40 +36,44 @@ import restoranmujigae.main.Main;
 
 public class CashierMenuCtrl {
 
+//    @FXML
+//    private Button meja1;
+//    @FXML
+//    private Button meja2;
+//    @FXML
+//    private Button meja3;
+//    @FXML
+//    private Button meja4;
+//    @FXML
+//    private Button meja5;
+//    @FXML
+//    private Button meja6;
+//    @FXML
+//    private Button meja7;
+//    @FXML
+//    private Button meja8;
+//    @FXML
+//    private Button meja9;
+//    @FXML
+//    private Button meja10;
+//    @FXML
+//    private Button meja11;
+//    @FXML
+//    private Button meja12;
     @FXML
-    private Button meja1;
-    @FXML
-    private Button meja2;
-    @FXML
-    private Button meja3;
-    @FXML
-    private Button meja4;
-    @FXML
-    private Button meja5;
-    @FXML
-    private Button meja6;
-    @FXML
-    private Button meja7;
-    @FXML
-    private Button meja8;
-    @FXML
-    private Button meja9;
-    @FXML
-    private Button meja10;
-    @FXML
-    private Button meja11;
-    @FXML
-    private Button meja12;
+    private TextField tableNumber;
 
     @FXML
     private void getMeja1(ActionEvent event) throws IOException {
-        System.out.println("MEJAAAAAAAAAAAAAAAAAAAAAAAAAAA 1");
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        TextField tableNumber = new TextField("1");
+        tableNumber.setText("1");
+        System.out.println(tableNumber);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -79,9 +84,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("2");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -93,9 +99,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("3");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -107,9 +114,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("4");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -121,9 +129,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("5");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -135,9 +144,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("6");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -149,9 +159,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("7");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -163,9 +174,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("8");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -177,9 +189,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("9");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -191,9 +204,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("10");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -205,9 +219,10 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("11");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
@@ -219,110 +234,109 @@ public class CashierMenuCtrl {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/CashierCheckout.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        tableNumber.setText("12");
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
         stage.setFullScreen(true);
     }
+
     @FXML
     private void getCashier(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Cashier.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setTitle("MUJIGAE");
-        stage.setMaximized(true);
-        stage.setResizable(true);
+        stage.setMaximized(false);
+        stage.setResizable(false);
         stage.setMinHeight(stage.getHeight());
         stage.setMinWidth(stage.getWidth());
         stage.show();
         stage.setFullScreen(true);
     }
-    
-      @FXML
+
+    @FXML
     private void checkoutMeja(ActionEvent event) throws IOException {
 //       OrderCtrl.callCheckout(Main.ID_MEJA, 1);
-        
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
-        alert.setHeaderText("Thank you!");
-        alert.setContentText("Please wait! Your order are being prepared");
+        alert.setHeaderText("CHECKOUT !");
 
         alert.showAndWait();
     }
 
-    @FXML
-    private void initialize() throws Exception {
-        refresh();
-        Timeline fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent event) {
-                refresh();
-            }
-        }));
-        fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
-        fiveSecondsWonder.play();
-    }
-
+//    @FXML
+//    private void initialize() throws Exception {
+//        refresh();
+//        Timeline fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+//
+//            @Override
+//            public void handle(ActionEvent event) {
+//                refresh();
+//            }
+//        }));
+//        fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
+//        fiveSecondsWonder.play();
+//    }
+//
     @FXML
     protected void getRefresh(ActionEvent event) throws IOException {
-        refresh();
+        System.out.println("REFRESH");
     }
+//
+//    public void refresh() {
+//        List<Meja> temp = DataCtrl.getAllAvailableMeja();
+//        for (int i = 0; i < temp.size(); i++) {
+//            boolean call = temp.get(i).isCallcheckout();
+//            switch (i) {
+//                case 0:
+//                    setColor(meja1, call);
+//                    break;
+//                case 1:
+//                    setColor(meja2, call);
+//                    break;
+//                case 2:
+//                    setColor(meja3, call);
+//                    break;
+//                case 3:
+//                    setColor(meja4, call);
+//                    break;
+//                case 4:
+//                    setColor(meja5, call);
+//                    break;
+//                case 5:
+//                    setColor(meja6, call);
+//                    break;
+//                case 6:
+//                    setColor(meja7, call);
+//                    break;
+//                case 7:
+//                    setColor(meja8, call);
+//                    break;
+//                case 8:
+//                    setColor(meja9, call);
+//                    break;
+//                case 9:
+//                    setColor(meja10, call);
+//                    break;
+//                case 10:
+//                    setColor(meja11, call);
+//                    break;
+//                case 11:
+//                    setColor(meja12, call);
+//                    break;
+//            }
+//        }
+//    }
 
-    public void refresh() {
-        List<Meja> temp = DataCtrl.getAllAvailableMeja();
-        for (int i = 0; i < temp.size(); i++) {
-            boolean call = temp.get(i).isCallcheckout();
-            switch (i) {
-                case 0:
-                    setColor(meja1, call);
-                    break;
-                case 1:
-                    setColor(meja2, call);
-                    break;
-                case 2:
-                    setColor(meja3, call);
-                    break;
-                case 3:
-                    setColor(meja4, call);
-                    break;
-                case 4:
-                    setColor(meja5, call);
-                    break;
-                case 5:
-                    setColor(meja6, call);
-                    break;
-                case 6:
-                    setColor(meja7, call);
-                    break;
-                case 7:
-                    setColor(meja8, call);
-                    break;
-                case 8:
-                    setColor(meja9, call);
-                    break;
-                case 9:
-                    setColor(meja10, call);
-                    break;
-                case 10:
-                    setColor(meja11, call);
-                    break;
-                case 11:
-                    setColor(meja12, call);
-                    break;
-            }
-        }
-    }
-
-    public void setColor(Button target, boolean call) {
-        if (call) {
-            target.setStyle("-fx-background-color:#d9534f");
-        } else {
-            target.setStyle("-fx-background-color:#90caf9");
-        }
-    }
-
+//    public void setColor(Button target, boolean call) {
+//        if (call) {
+//            target.setStyle("-fx-background-color:#d9534f");
+//        } else {
+//            target.setStyle("-fx-background-color:#90caf9");
+//        }
+//    }
 }
