@@ -11,11 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
+import restoranmujigae.app.controller.data.PropertiesLoader;
 
 public class MainWaiter extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        PropertiesLoader.initProperties();
         Parent root = FXMLLoader.load(getClass().getResource("/restoranmujigae/view/Waiters.fxml"));
         primaryStage.setTitle("MUJIGAE WAITER");
         primaryStage.setMaximized(false);
